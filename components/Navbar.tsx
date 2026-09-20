@@ -24,18 +24,18 @@ export default function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-[#FAFAFD]/95 backdrop-blur-sm border-b border-slate-100/80 transition-colors">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-22 sm:h-24 flex items-center justify-between">
+    <header className="sticky top-0 z-50 bg-[#FAFAFD]/95 backdrop-blur-md border-b border-slate-100/80 transition-all">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 lg:h-24 flex items-center justify-between">
         {/* Brand Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="relative h-12 sm:h-14 w-48 sm:w-60">
+        <Link href="/" className="flex items-center gap-2 group shrink-0">
+          <div className="relative h-8 sm:h-11 lg:h-14 w-28 sm:w-44 lg:w-56">
             <Image 
               src="/assets/logo-png.png"
               alt="Aegiss Logo"
               fill
               priority
-              sizes="(max-width: 640px) 192px, 240px"
-              className="object-contain object-left scale-110 origin-left"
+              sizes="(max-width: 640px) 120px, (max-width: 1024px) 180px, 240px"
+              className="object-contain object-left scale-105 origin-left"
             />
           </div>
         </Link>
@@ -61,8 +61,8 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* Right CTA / Search */}
-        <div className="hidden sm:flex items-center gap-5">
+        {/* Right CTA / Search (Desktop & Tablet) */}
+        <div className="hidden sm:flex items-center gap-4 lg:gap-5">
           <button
             type="button"
             aria-label="Search"
@@ -72,18 +72,18 @@ export default function Navbar() {
           </button>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-6 sm:px-7 py-2.5 sm:py-3 rounded-full text-sm sm:text-[15px] font-semibold text-white bg-[#635BFF] hover:bg-[#5247E6] transition-all shadow-sm hover:shadow-md hover:shadow-indigo-500/25 active:scale-98"
+            className="inline-flex items-center gap-2 px-5 sm:px-7 py-2 sm:py-3 rounded-full text-xs sm:text-[15px] font-semibold text-white bg-[#635BFF] hover:bg-[#5247E6] transition-all shadow-sm hover:shadow-md hover:shadow-indigo-500/25 active:scale-98"
           >
             <span>Let&apos;s Talk</span>
             <ArrowRightIcon className="w-4 h-4" />
           </Link>
         </div>
 
-        {/* Mobile Hamburger Button */}
+        {/* Mobile Header Controls */}
         <div className="flex sm:hidden items-center gap-2">
           <Link
             href="/contact"
-            className="inline-flex items-center gap-1 px-3.5 py-1.5 rounded-full text-xs font-semibold text-white bg-[#635BFF]"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold text-white bg-[#635BFF] hover:bg-[#5247E6] shadow-2xs active:scale-95 transition-transform"
           >
             <span>Talk</span>
             <ArrowRightIcon className="w-3 h-3" />
@@ -91,7 +91,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 text-slate-700 hover:text-slate-900 focus:outline-none"
+            className="p-2 rounded-xl text-slate-800 hover:bg-slate-100/80 active:bg-slate-200/80 transition-colors focus:outline-none"
             aria-label="Toggle Menu"
           >
             <svg
@@ -104,15 +104,15 @@ export default function Navbar() {
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  strokeWidth={2}
+                  strokeWidth={2.2}
                   d="M6 18L18 6M6 6l12 12"
                 />
               ) : (
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
+                  strokeWidth={2.2}
+                  d="M4 6.5h16M4 12h16M4 17.5h16"
                 />
               )}
             </svg>
@@ -120,9 +120,9 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown */}
+      {/* Mobile Menu Dropdown / Drawer */}
       {mobileMenuOpen && (
-        <div className="sm:hidden border-b border-slate-200 bg-white px-4 pt-2 pb-6 space-y-3 shadow-lg">
+        <div className="sm:hidden border-b border-slate-200/90 bg-white/95 backdrop-blur-xl px-5 pt-3 pb-6 space-y-2 shadow-2xl anim-fade-in">
           {navLinks.map((link) => {
             const active = isActive(link.href);
             return (
@@ -130,16 +130,27 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className={`block px-3 py-2 rounded-lg text-base font-medium ${
+                className={`flex items-center justify-between px-4 py-3 rounded-2xl text-sm font-bold transition-colors ${
                   active
-                    ? "bg-purple-50 text-[#635BFF] font-semibold"
+                    ? "bg-[#635BFF]/10 text-[#635BFF]"
                     : "text-slate-700 hover:bg-slate-50"
                 }`}
               >
-                {link.name}
+                <span>{link.name}</span>
+                {active && <span className="w-1.5 h-1.5 rounded-full bg-[#635BFF]" />}
               </Link>
             );
           })}
+          <div className="pt-3 border-t border-slate-100">
+            <Link
+              href="/contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-full flex items-center justify-center gap-2 py-3.5 rounded-2xl text-sm font-bold text-white bg-[#0F172A] hover:bg-slate-900 shadow-md active:scale-98 transition-all"
+            >
+              <span>Book a Free Consultation</span>
+              <ArrowRightIcon className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
       )}
     </header>

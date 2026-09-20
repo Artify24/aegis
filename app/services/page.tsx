@@ -68,24 +68,24 @@ export default function ServicesPage() {
 
       <main className="flex-grow">
         {/* ===================== HERO SECTION ===================== */}
-        <section className="relative overflow-hidden w-full bg-[#FAFAFD] min-h-[calc(100vh-5rem)] lg:h-[calc(100vh-5.5rem)] lg:min-h-[640px] lg:max-h-[820px] flex flex-col justify-between pt-6 sm:pt-10 lg:pt-12 pb-8 sm:pb-10">
-          {/* Background Graphic with smooth scale fade-in */}
-          <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden anim-fade-scale">
+        <section className="relative overflow-hidden w-full bg-[#FAFAFD] lg:h-[calc(100vh-5.5rem)] lg:min-h-[640px] lg:max-h-[820px] flex flex-col justify-between pt-4 sm:pt-6 lg:pt-12 pb-3 sm:pb-8">
+          {/* Background Graphic with smooth scale fade-in - Desktop only */}
+          <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden anim-fade-scale hidden lg:block">
             <Image
               src="/assets/hero-services.png"
               alt="From Ideas to Intelligent Execution - Aegiss Automation Partner"
               fill
               priority
-              sizes="100vw"
+              sizes="(min-width: 1024px) 100vw, 1px"
               className="object-cover object-[82%_center] xl:object-right"
             />
-            {/* Soft gradient on mobile/tablet so text remains crystal clear */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#F4F0FC]/95 via-[#F4F0FC]/80 to-transparent lg:hidden" />
           </div>
+          {/* Subtle mobile backdrop gradient so text remains crisp and unobstructed */}
+          <div className="absolute inset-0 pointer-events-none z-0 lg:hidden bg-gradient-to-b from-[#FAF8FE] via-[#F4F0FD]/30 to-[#FAFAFD]" />
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-between flex-grow">
             {/* Top / Middle Left Content Area */}
-            <div className="max-w-xl lg:max-w-[580px] xl:max-w-[620px] pt-4 sm:pt-8 lg:pt-10 space-y-5 sm:space-y-6">
+            <div className="max-w-xl lg:max-w-[580px] xl:max-w-[620px] pt-2 sm:pt-6 lg:pt-10 space-y-4 sm:space-y-6">
               {/* Badge */}
               <FadeIn direction="up" delay={0.05} distance={16}>
                 <div className="flex items-center gap-2.5">
@@ -98,7 +98,7 @@ export default function ServicesPage() {
 
               {/* Heading */}
               <FadeIn direction="up" delay={0.12} distance={24}>
-                <h1 className="text-4xl sm:text-5xl lg:text-[54px] xl:text-[60px] font-black tracking-tight text-[#0B0D17] leading-[1.08]">
+                <h1 className="text-3xl sm:text-5xl lg:text-[54px] xl:text-[60px] font-black tracking-tight text-[#0B0D17] leading-[1.08]">
                   From Ideas to <br />
                   Intelligent{" "}
                   <span className="bg-gradient-to-r from-[#635BFF] via-[#7559FF] to-[#8A6FF8] bg-clip-text text-transparent">
@@ -117,11 +117,11 @@ export default function ServicesPage() {
 
               {/* Action Buttons */}
               <FadeIn direction="up" delay={0.25} distance={20}>
-                <div className="flex flex-wrap items-center gap-4 pt-1 sm:pt-2">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 pt-1 sm:pt-2">
                   <HoverScale scale={1.04} tapScale={0.96}>
                     <Link
                       href="/contact"
-                      className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-sm sm:text-[14.5px] font-bold text-white bg-[#635BFF] hover:bg-[#5247E6] transition-all shadow-md hover:shadow-lg hover:shadow-indigo-500/25 group"
+                      className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full text-sm sm:text-[14.5px] font-bold text-white bg-[#635BFF] hover:bg-[#5247E6] transition-all shadow-md hover:shadow-lg hover:shadow-indigo-500/25 group w-auto text-center"
                     >
                       <span>Book a Free Call</span>
                       <span className="transition-transform duration-200 group-hover:translate-x-1 text-base leading-none">&rarr;</span>
@@ -130,7 +130,7 @@ export default function ServicesPage() {
                   <HoverScale scale={1.04} tapScale={0.96}>
                     <Link
                       href="#services-list"
-                      className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-sm sm:text-[14.5px] font-bold text-slate-900 bg-white/95 backdrop-blur-xs border border-slate-900 hover:bg-slate-900 hover:text-white transition-all shadow-xs group"
+                      className="inline-flex items-center justify-center gap-1.5 px-1 py-1.5 text-sm font-bold text-slate-900 border-b border-slate-900 sm:border-0 sm:px-7 sm:py-3.5 sm:rounded-full sm:bg-white/95 sm:backdrop-blur-xs sm:border sm:border-slate-900 hover:text-[#635BFF] sm:hover:bg-slate-900 sm:hover:text-white transition-all w-auto text-center"
                     >
                       <span>Explore Our Work</span>
                       <span className="transition-transform duration-200 group-hover:translate-x-1 text-base leading-none">&rarr;</span>
@@ -138,32 +138,40 @@ export default function ServicesPage() {
                   </HoverScale>
                 </div>
               </FadeIn>
+
+              {/* Seamless 3D Visual on Mobile (Matches media_1789912195105.png) */}
+              <div className="lg:hidden relative w-full flex justify-center pt-2 sm:pt-4">
+                <div className="relative w-[280px] sm:w-[340px] aspect-[770/880]">
+                  <Image
+                    src="/assets/hero-services-mobile.png"
+                    alt="Aegis Automation Services"
+                    fill
+                    priority
+                    sizes="(max-width: 640px) 280px, 340px"
+                    className="object-contain object-bottom select-none pointer-events-none drop-shadow-[0_16px_36px_rgba(99,91,255,0.18)]"
+                  />
+                </div>
+              </div>
             </div>
 
             {/* Bottom Row: Stats on Left, Sub-text on Right */}
-            <FadeIn direction="up" delay={0.32} distance={20}>
-              <div className="pt-8 sm:pt-12 flex flex-col sm:flex-row sm:items-end justify-between gap-6">
-                {/* Stats Row with Hairline Dividers */}
-                <div className="flex items-center gap-5 sm:gap-7 lg:gap-8">
-                  <div className="w-px h-10 bg-slate-300/80 shrink-0" />
-
-                  <div>
-                    <div className="text-2xl sm:text-3xl lg:text-[34px] font-black text-slate-950 tracking-tight">50+</div>
-                    <div className="text-xs sm:text-[13px] text-slate-500 font-medium mt-0.5 whitespace-nowrap">Projects Delivered</div>
+            <FadeIn direction="up" delay={0.32} distance={20} className="w-full relative z-10 mt-2 lg:mt-0">
+              <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+                {/* Stats Row: 3-column pill card on mobile with dividers, seamless row on desktop */}
+                <div className="grid grid-cols-3 divide-x divide-slate-200/80 bg-white/95 backdrop-blur-md border border-white/80 rounded-2xl sm:rounded-3xl p-3 sm:p-5 shadow-[0_12px_36px_-8px_rgba(99,91,255,0.08)] w-full lg:w-auto lg:bg-transparent lg:border-0 lg:p-0 lg:shadow-none lg:flex lg:items-center lg:gap-8">
+                  <div className="text-center sm:text-left px-2 sm:px-4 lg:px-0">
+                    <div className="text-xl sm:text-3xl lg:text-[34px] font-black text-slate-950 tracking-tight">50+</div>
+                    <div className="text-[10px] sm:text-[13px] text-slate-500 font-medium mt-0.5 leading-tight">Projects Delivered</div>
                   </div>
 
-                  <div className="w-px h-10 bg-slate-300/80 shrink-0" />
-
-                  <div>
-                    <div className="text-2xl sm:text-3xl lg:text-[34px] font-black text-slate-950 tracking-tight">30+</div>
-                    <div className="text-xs sm:text-[13px] text-slate-500 font-medium mt-0.5 whitespace-nowrap">Happy Clients</div>
+                  <div className="text-center sm:text-left px-2 sm:px-4 lg:px-0">
+                    <div className="text-xl sm:text-3xl lg:text-[34px] font-black text-slate-950 tracking-tight">30+</div>
+                    <div className="text-[10px] sm:text-[13px] text-slate-500 font-medium mt-0.5 leading-tight">Happy Clients</div>
                   </div>
 
-                  <div className="w-px h-10 bg-slate-300/80 shrink-0" />
-
-                  <div>
-                    <div className="text-2xl sm:text-3xl lg:text-[34px] font-black text-slate-950 tracking-tight">4.9/5</div>
-                    <div className="text-xs sm:text-[13px] text-slate-500 font-medium mt-0.5 whitespace-nowrap">Client Satisfaction</div>
+                  <div className="text-center sm:text-left px-2 sm:px-4 lg:px-0">
+                    <div className="text-xl sm:text-3xl lg:text-[34px] font-black text-slate-950 tracking-tight">4.9/5</div>
+                    <div className="text-[10px] sm:text-[13px] text-slate-500 font-medium mt-0.5 leading-tight">Satisfaction</div>
                   </div>
                 </div>
 
@@ -176,6 +184,18 @@ export default function ServicesPage() {
                     MORE IMPACT.
                   </div>
                 </div>
+              </div>
+
+              {/* Mobile Scroll to Explore (Matches media_1789912195105.png) */}
+              <div className="lg:hidden flex flex-col items-center justify-center pt-2.5 pb-1 text-slate-400">
+                <div className="w-7 h-7 rounded-full border border-slate-200/80 bg-white/80 backdrop-blur-xs flex items-center justify-center shadow-2xs mb-0.5">
+                  <svg className="w-3.5 h-3.5 text-slate-500 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
+                <span className="text-[9px] font-extrabold tracking-[0.2em] text-slate-400 uppercase">
+                  Scroll to Explore
+                </span>
               </div>
             </FadeIn>
           </div>

@@ -1339,8 +1339,8 @@ export default function ServicesCatalog() {
         
         {/* ===================== TOP FILTER BAR (EXACT MATCH TO media_1789892546170.png) ===================== */}
         <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-4">
-          {/* Filter Pills */}
-          <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
+          {/* Filter Pills - Horizontally scrollable on mobile, wrapping on desktop */}
+          <div className="flex items-center gap-2 sm:gap-2.5 overflow-x-auto pb-1.5 sm:pb-0 sm:flex-wrap no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0">
             {categories.map((cat) => {
               const isActive = activeCategory === cat;
               return (
@@ -1348,7 +1348,7 @@ export default function ServicesCatalog() {
                   key={cat}
                   type="button"
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-4 sm:px-5 py-2.5 rounded-full text-xs sm:text-[13px] font-bold tracking-tight transition-all active:scale-95 whitespace-nowrap ${
+                  className={`px-4 sm:px-5 py-2.5 rounded-full text-xs sm:text-[13px] font-bold tracking-tight transition-all active:scale-95 whitespace-nowrap shrink-0 ${
                     isActive
                       ? "bg-[#635BFF] text-white shadow-[0_4px_16px_rgba(99,91,255,0.35)] scale-[1.02]"
                       : "bg-white text-slate-700 border border-slate-200/90 hover:border-slate-300 hover:bg-slate-50 shadow-2xs"
@@ -1588,42 +1588,42 @@ export default function ServicesCatalog() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.94, y: 20 }}
               transition={{ duration: 0.28, ease: TRANSITION_EASE }}
-              className="relative w-full max-w-xl bg-white rounded-[32px] p-6 sm:p-8 shadow-2xl border border-white/80 overflow-hidden"
+              className="relative w-full max-w-xl max-h-[90vh] overflow-y-auto bg-white rounded-[28px] sm:rounded-[32px] p-5 sm:p-8 shadow-2xl border border-white/80"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
               <button
                 type="button"
                 onClick={() => setSelectedService(null)}
-                className="absolute top-6 right-6 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center text-sm font-bold transition-all"
+                className="absolute top-5 right-5 sm:top-6 sm:right-6 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center text-sm font-bold transition-all"
               >
                 ✕
               </button>
 
               {/* Header */}
-              <div className="flex items-center gap-4">
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-b from-white via-[#F6F3FF] to-[#EAE2FE] border border-white shadow-[0_4px_16px_rgba(99,91,255,0.15)] flex items-center justify-center shrink-0">
+              <div className="flex items-center gap-3.5 sm:gap-4 pr-10">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-b from-white via-[#F6F3FF] to-[#EAE2FE] border border-white shadow-[0_4px_16px_rgba(99,91,255,0.15)] flex items-center justify-center shrink-0">
                   <ServiceIcon type={selectedService.iconType} />
                 </div>
                 <div>
-                  <span className="text-xs font-bold text-slate-400">SOLUTION {selectedService.number}</span>
-                  <h3 className="text-2xl font-black text-slate-950 tracking-tight">{selectedService.title}</h3>
+                  <span className="text-[11px] sm:text-xs font-bold text-slate-400">SOLUTION {selectedService.number}</span>
+                  <h3 className="text-xl sm:text-2xl font-black text-slate-950 tracking-tight">{selectedService.title}</h3>
                 </div>
               </div>
 
               {/* Description */}
-              <p className="text-slate-600 text-sm leading-relaxed mt-4">
+              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mt-4">
                 {selectedService.deepDetails?.overview || selectedService.description}
               </p>
 
               {/* Metrics */}
-              <div className="mt-6 rounded-2xl bg-[#F8F9FD] border border-slate-200/80 p-4 grid grid-cols-3 divide-x divide-slate-200 items-center text-center">
+              <div className="mt-5 sm:mt-6 rounded-2xl bg-[#F8F9FD] border border-slate-200/80 p-3 sm:p-4 grid grid-cols-3 divide-x divide-slate-200 items-center text-center">
                 {selectedService.metrics.map((m, i) => (
-                  <div key={i} className="px-2">
-                    <div className={`text-xl font-black ${m.highlight ? 'text-[#635BFF]' : 'text-slate-950'}`}>
+                  <div key={i} className="px-1.5 sm:px-2">
+                    <div className={`text-lg sm:text-xl font-black ${m.highlight ? 'text-[#635BFF]' : 'text-slate-950'}`}>
                       {m.value}
                     </div>
-                    <div className="text-[11px] font-medium text-slate-500 mt-0.5">
+                    <div className="text-[10px] sm:text-[11px] font-medium text-slate-500 mt-0.5">
                       {m.label}
                     </div>
                   </div>
@@ -1631,10 +1631,10 @@ export default function ServicesCatalog() {
               </div>
 
               {/* Feature Bullets */}
-              <div className="mt-6 space-y-2.5">
+              <div className="mt-5 sm:mt-6 space-y-2.5">
                 <span className="text-xs font-extrabold uppercase tracking-wider text-slate-400">Key Capabilities</span>
                 {selectedService.bullets.map((b, i) => (
-                  <div key={i} className="flex items-center gap-2.5 text-sm font-medium text-slate-800">
+                  <div key={i} className="flex items-center gap-2.5 text-xs sm:text-sm font-medium text-slate-800">
                     <span className="w-4 h-4 rounded-full bg-[#ECE7FE] text-[#635BFF] flex items-center justify-center shrink-0">
                       <svg className="w-2.5 h-2.5" viewBox="0 0 20 20" fill="currentColor">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -1646,13 +1646,13 @@ export default function ServicesCatalog() {
               </div>
 
               {/* CTA */}
-              <div className="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between gap-4">
+              <div className="mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
                 <span className="text-xs text-slate-500">
                   Typical deployment: <strong className="text-slate-800">{selectedService.deepDetails?.typicalTimeline || "2 to 4 weeks"}</strong>
                 </span>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-bold text-white bg-[#635BFF] hover:bg-[#5247E6] transition-all shadow-md active:scale-95"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-bold text-white bg-[#635BFF] hover:bg-[#5247E6] transition-all shadow-md active:scale-95 w-full sm:w-auto text-center"
                 >
                   <span>Book a Consultation</span>
                   <ArrowRightIcon className="w-4 h-4" />

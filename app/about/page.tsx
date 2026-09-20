@@ -35,24 +35,25 @@ export default function AboutPage() {
 
       <main className="flex-grow">
         {/* ===================== HERO SECTION (EXACT MATCH TO media_1789897446052.png) ===================== */}
-        <section className="relative overflow-hidden w-full bg-[#FAFAFD] min-h-[calc(100vh-5rem)] lg:h-[calc(100vh-5.5rem)] lg:min-h-[620px] lg:max-h-[780px] flex flex-col justify-between pt-6 sm:pt-10 lg:pt-12 pb-8 sm:pb-12">
-          {/* Background Graphic with smooth scale fade-in */}
-          <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden anim-fade-scale">
+        {/* ===================== HERO SECTION (EXACT MATCH TO media_1789897446052.png) ===================== */}
+        <section className="relative overflow-hidden w-full bg-[#FAFAFD] lg:h-[calc(100vh-5.5rem)] lg:min-h-[620px] lg:max-h-[780px] flex flex-col justify-between pt-4 sm:pt-6 lg:pt-12 pb-3 sm:pb-8">
+          {/* Background Graphic with smooth scale fade-in - Desktop only */}
+          <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden anim-fade-scale hidden lg:block">
             <Image
               src="/assets/hero-about.png"
               alt="Ideas Today. A Smarter Tomorrow. - Aegiss"
               fill
               priority
-              sizes="100vw"
+              sizes="(min-width: 1024px) 100vw, 1px"
               className="object-cover object-[78%_center] xl:object-right"
             />
-            {/* Soft gradient overlay on mobile/tablet so text remains crystal clear */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#F4F0FC]/95 via-[#F4F0FC]/85 to-transparent lg:hidden" />
           </div>
+          {/* Subtle mobile backdrop gradient so text remains crisp and unobstructed */}
+          <div className="absolute inset-0 pointer-events-none z-0 lg:hidden bg-gradient-to-b from-[#FAF8FE] via-[#F4F0FD]/30 to-[#FAFAFD]" />
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-between flex-grow">
             {/* Top / Middle Left Content Area */}
-            <div className="max-w-xl lg:max-w-[580px] xl:max-w-[620px] pt-4 sm:pt-8 lg:pt-10 space-y-5 sm:space-y-6">
+            <div className="max-w-xl lg:max-w-[580px] xl:max-w-[620px] pt-2 sm:pt-6 lg:pt-10 space-y-4 sm:space-y-6">
               {/* Badge */}
               <FadeIn direction="up" delay={0.05} distance={16}>
                 <div className="flex items-center gap-2.5">
@@ -65,7 +66,7 @@ export default function AboutPage() {
 
               {/* Heading: Exactly 2 lines matching reference */}
               <FadeIn direction="up" delay={0.12} distance={24}>
-                <h1 className="text-4xl sm:text-5xl lg:text-[56px] xl:text-[62px] font-black tracking-tight text-[#0B0D17] leading-[1.08]">
+                <h1 className="text-3xl sm:text-5xl lg:text-[56px] xl:text-[62px] font-black tracking-tight text-[#0B0D17] leading-[1.08]">
                   Ideas Today. <br />
                   A Smarter{" "}
                   <span className="text-[#635BFF]">
@@ -85,11 +86,11 @@ export default function AboutPage() {
 
               {/* Action Buttons */}
               <FadeIn direction="up" delay={0.25} distance={20}>
-                <div className="flex flex-wrap items-center gap-4 pt-1 sm:pt-2">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 pt-1 sm:pt-2">
                   <HoverScale scale={1.04} tapScale={0.96}>
                     <Link
                       href="/contact"
-                      className="inline-flex items-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full text-xs sm:text-sm font-bold text-white bg-[#635BFF] hover:bg-[#5247E6] shadow-[0_6px_20px_rgba(99,91,255,0.35)] transition-all"
+                      className="inline-flex items-center justify-center gap-2 px-7 py-3 sm:py-3.5 rounded-full text-sm font-bold text-white bg-[#635BFF] hover:bg-[#5247E6] shadow-[0_6px_20px_rgba(99,91,255,0.35)] transition-all w-auto text-center"
                     >
                       <span>Book a Free Call</span>
                       <ArrowRightIcon className="w-4 h-4" />
@@ -98,7 +99,7 @@ export default function AboutPage() {
                   <HoverScale scale={1.04} tapScale={0.96}>
                     <Link
                       href="/services"
-                      className="inline-flex items-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full text-xs sm:text-sm font-bold text-slate-900 bg-white border border-slate-300 hover:bg-slate-50 hover:border-slate-400 transition-all shadow-2xs"
+                      className="inline-flex items-center justify-center gap-1.5 px-1 py-1.5 text-sm font-bold text-slate-900 border-b border-slate-900 sm:border-0 sm:px-7 sm:py-3.5 sm:rounded-full sm:bg-white sm:border sm:border-slate-300 hover:text-[#635BFF] sm:hover:bg-slate-50 transition-all w-auto text-center"
                     >
                       <span>Our Services</span>
                       <ArrowRightIcon className="w-4 h-4" />
@@ -106,51 +107,68 @@ export default function AboutPage() {
                   </HoverScale>
                 </div>
               </FadeIn>
+
+              {/* Seamless 3D Visual on Mobile (Matches media_1789912195105.png) */}
+              <div className="lg:hidden relative w-full flex justify-center pt-2 sm:pt-4">
+                <div className="relative w-[280px] sm:w-[340px] aspect-[1019/818]">
+                  <Image
+                    src="/assets/hero-about-mobile.png"
+                    alt="Aegis Architecture"
+                    fill
+                    priority
+                    sizes="(max-width: 640px) 280px, 340px"
+                    className="object-contain object-bottom select-none pointer-events-none drop-shadow-[0_16px_36px_rgba(99,91,255,0.18)]"
+                  />
+                </div>
+              </div>
             </div>
 
-            {/* Bottom Stats Row with Vertical Hairline Dividers (Exact Match to media_1789897446052.png) */}
-            <FadeIn direction="up" delay={0.32} distance={20}>
-              <div className="pt-8 sm:pt-10">
-                <div className="flex flex-wrap items-center gap-6 sm:gap-8">
+            {/* Bottom Stats Row: 3-column pill card on mobile with dividers, seamless row on desktop */}
+            <FadeIn direction="up" delay={0.32} distance={20} className="w-full relative z-10 mt-2 lg:mt-0">
+              <div className="pt-2 sm:pt-10">
+                <div className="grid grid-cols-3 divide-x divide-slate-200/80 bg-white/95 backdrop-blur-md border border-white/80 rounded-2xl sm:rounded-3xl p-3 sm:p-5 shadow-[0_12px_36px_-8px_rgba(99,91,255,0.08)] w-full lg:w-auto lg:bg-transparent lg:border-0 lg:p-0 lg:shadow-none lg:flex lg:items-center lg:gap-8">
                   {/* Metric 1 */}
-                  <div className="flex items-center gap-4 sm:gap-5">
-                    <div className="w-px h-10 bg-slate-300/80 shrink-0" />
-                    <div>
-                      <div className="text-2xl sm:text-3xl lg:text-[32px] font-black text-slate-950 tracking-tight leading-none">
-                        50+
-                      </div>
-                      <div className="text-xs sm:text-[13px] text-slate-500 font-medium mt-1 whitespace-nowrap">
-                        Projects Delivered
-                      </div>
+                  <div className="text-center sm:text-left px-2 sm:px-4 lg:px-0">
+                    <div className="text-xl sm:text-3xl lg:text-[32px] font-black text-slate-950 tracking-tight leading-none">
+                      50+
+                    </div>
+                    <div className="text-[10px] sm:text-[13px] text-slate-500 font-medium mt-1 leading-tight">
+                      Projects Delivered
                     </div>
                   </div>
 
                   {/* Metric 2 */}
-                  <div className="flex items-center gap-4 sm:gap-5">
-                    <div className="w-px h-10 bg-slate-300/80 shrink-0" />
-                    <div>
-                      <div className="text-2xl sm:text-3xl lg:text-[32px] font-black text-slate-950 tracking-tight leading-none">
-                        30+
-                      </div>
-                      <div className="text-xs sm:text-[13px] text-slate-500 font-medium mt-1 whitespace-nowrap">
-                        Happy Clients
-                      </div>
+                  <div className="text-center sm:text-left px-2 sm:px-4 lg:px-0">
+                    <div className="text-xl sm:text-3xl lg:text-[32px] font-black text-slate-950 tracking-tight leading-none">
+                      30+
+                    </div>
+                    <div className="text-[10px] sm:text-[13px] text-slate-500 font-medium mt-1 leading-tight">
+                      Happy Clients
                     </div>
                   </div>
 
                   {/* Metric 3 */}
-                  <div className="flex items-center gap-4 sm:gap-5">
-                    <div className="w-px h-10 bg-slate-300/80 shrink-0" />
-                    <div>
-                      <div className="text-2xl sm:text-3xl lg:text-[32px] font-black text-slate-950 tracking-tight leading-none">
-                        4.9/5
-                      </div>
-                      <div className="text-xs sm:text-[13px] text-slate-500 font-medium mt-1 whitespace-nowrap">
-                        Client Satisfaction
-                      </div>
+                  <div className="text-center sm:text-left px-2 sm:px-4 lg:px-0">
+                    <div className="text-xl sm:text-3xl lg:text-[32px] font-black text-slate-950 tracking-tight leading-none">
+                      4.9/5
+                    </div>
+                    <div className="text-[10px] sm:text-[13px] text-slate-500 font-medium mt-1 leading-tight">
+                      Satisfaction
                     </div>
                   </div>
                 </div>
+              </div>
+
+              {/* Mobile Scroll to Explore (Matches media_1789912195105.png) */}
+              <div className="lg:hidden flex flex-col items-center justify-center pt-2.5 pb-1 text-slate-400">
+                <div className="w-7 h-7 rounded-full border border-slate-200/80 bg-white/80 backdrop-blur-xs flex items-center justify-center shadow-2xs mb-0.5">
+                  <svg className="w-3.5 h-3.5 text-slate-500 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
+                <span className="text-[9px] font-extrabold tracking-[0.2em] text-slate-400 uppercase">
+                  Scroll to Explore
+                </span>
               </div>
             </FadeIn>
           </div>
@@ -370,7 +388,7 @@ export default function AboutPage() {
                   src="/assets/about-earth-network.png"
                   alt="Smarter Systems. Brighter Tomorrow. - Aegiss Network"
                   fill
-                  sizes="100vw"
+                  sizes="(max-width: 1280px) 100vw, 1280px"
                   className="object-cover object-right pointer-events-none"
                 />
 

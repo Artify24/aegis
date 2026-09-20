@@ -72,24 +72,24 @@ export default function ContactPage() {
 
       <main className="flex-grow">
         {/* ===================== HERO SECTION (EXACT MATCH TO media_1789900471760.png) ===================== */}
-        <section className="relative overflow-hidden w-full bg-[#FAFAFD] min-h-[calc(100vh-5rem)] lg:h-[calc(100vh-5.5rem)] lg:min-h-[620px] lg:max-h-[780px] flex flex-col justify-between pt-6 sm:pt-10 lg:pt-12 pb-8 sm:pb-12">
-          {/* Background Graphic with smooth scale fade-in */}
-          <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden anim-fade-scale">
+        <section className="relative overflow-hidden w-full bg-[#FAFAFD] lg:h-[calc(100vh-5.5rem)] lg:min-h-[620px] lg:max-h-[780px] flex flex-col justify-between pt-4 sm:pt-6 lg:pt-12 pb-3 sm:pb-8">
+          {/* Background Graphic with smooth scale fade-in - Desktop only */}
+          <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden anim-fade-scale hidden lg:block">
             <Image
               src="/assets/hero-contact.png"
               alt="Let's turn your ideas into impact. - Aegiss"
               fill
               priority
-              sizes="100vw"
+              sizes="(min-width: 1024px) 100vw, 1px"
               className="object-cover object-[74%_center] xl:object-right"
             />
-            {/* Soft gradient overlay on mobile/tablet so text remains crystal clear */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#F4F0FC]/95 via-[#F4F0FC]/85 to-transparent lg:hidden" />
           </div>
+          {/* Subtle mobile backdrop gradient so text remains crisp and unobstructed */}
+          <div className="absolute inset-0 pointer-events-none z-0 lg:hidden bg-gradient-to-b from-[#FAF8FE] via-[#F4F0FD]/30 to-[#FAFAFD]" />
 
           {/* Main Headline & Intro */}
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-grow flex flex-col justify-center">
-            <div className="max-w-xl xl:max-w-2xl space-y-4 sm:space-y-6">
+            <div className="max-w-xl xl:max-w-2xl space-y-4 sm:space-y-6 pt-2 sm:pt-6">
               {/* Tag / Sub-label */}
               <FadeIn direction="up" delay={0.05} distance={16}>
                 <div className="inline-flex items-center gap-2 mb-1">
@@ -102,7 +102,7 @@ export default function ContactPage() {
 
               {/* Main Heading */}
               <FadeIn direction="up" delay={0.12} distance={24}>
-                <h1 className="text-4xl sm:text-6xl lg:text-[68px] xl:text-[76px] font-black text-[#0D1527] tracking-tight leading-[1.05]">
+                <h1 className="text-3xl sm:text-6xl lg:text-[68px] xl:text-[76px] font-black text-[#0D1527] tracking-tight leading-[1.05]">
                   Let&apos;s Build <br />
                   <span className="text-[#635BFF]">What&apos;s Next.</span>
                 </h1>
@@ -115,24 +115,66 @@ export default function ContactPage() {
                   possible? We&apos;d love to hear from you.
                 </p>
               </FadeIn>
+
+              {/* Seamless 3D Visual on Mobile (Matches media_1789912195105.png) */}
+              <div className="lg:hidden relative w-full flex justify-center pt-2 sm:pt-4">
+                <div className="relative w-[280px] sm:w-[340px] aspect-[1018/818]">
+                  <Image
+                    src="/assets/hero-contact-mobile.png"
+                    alt="Contact Aegis"
+                    fill
+                    priority
+                    sizes="(max-width: 640px) 280px, 340px"
+                    className="object-contain object-bottom select-none pointer-events-none drop-shadow-[0_16px_36px_rgba(99,91,255,0.18)]"
+                  />
+                </div>
+              </div>
             </div>
           </div>
 
           {/* Bottom Row: 3 Guarantees (Left) & Floating Social Proof Badge (Right) */}
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-8 sm:pt-10">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-4 sm:pt-10">
+            {/* Mobile 3-Column Pill Card (Matches media_1789912195105.png) */}
+            <div className="md:hidden w-full bg-white/95 backdrop-blur-md border border-white/80 rounded-2xl p-3.5 shadow-[0_12px_36px_-8px_rgba(99,91,255,0.08)]">
+              <div className="grid grid-cols-3 divide-x divide-slate-200/80 items-center text-center">
+                <div className="flex flex-col items-center px-1">
+                  <div className="w-8 h-8 rounded-xl bg-[#ECE7FE] text-[#635BFF] flex items-center justify-center mb-1">
+                    <BoltIcon className="w-4 h-4 text-[#635BFF]" />
+                  </div>
+                  <span className="text-[10px] font-bold text-slate-900 leading-tight">Quick Response</span>
+                  <span className="text-[8.5px] text-slate-500 font-medium mt-0.5">&lt; 24 hours</span>
+                </div>
+                <div className="flex flex-col items-center px-1">
+                  <div className="w-8 h-8 rounded-xl bg-[#ECE7FE] text-[#635BFF] flex items-center justify-center mb-1">
+                    <UsersIcon className="w-4 h-4 text-[#635BFF]" />
+                  </div>
+                  <span className="text-[10px] font-bold text-slate-900 leading-tight">Expert Advice</span>
+                  <span className="text-[8.5px] text-slate-500 font-medium mt-0.5">Specialists</span>
+                </div>
+                <div className="flex flex-col items-center px-1">
+                  <div className="w-8 h-8 rounded-xl bg-[#ECE7FE] text-[#635BFF] flex items-center justify-center mb-1">
+                    <LockIcon className="w-4 h-4 text-[#635BFF]" />
+                  </div>
+                  <span className="text-[10px] font-bold text-slate-900 leading-tight">Confidential</span>
+                  <span className="text-[8.5px] text-slate-500 font-medium mt-0.5">Strict NDA</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Desktop Row Layout (100% Unchanged) */}
+            <div className="hidden md:flex flex-col md:flex-row md:items-center justify-between gap-6">
               {/* 3 Guarantees */}
-              <StaggerContainer staggerDelay={0.08} className="flex flex-wrap items-center gap-6 sm:gap-8 lg:gap-10">
+              <StaggerContainer staggerDelay={0.08} className="flex flex-wrap items-center gap-8 lg:gap-10 w-auto">
                 {/* Quick Response */}
                 <StaggerItem>
                   <HoverCard hoverY={-3}>
                     <div className="flex items-center gap-3">
-                      <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-br from-[#ECE7FE] via-[#F4F1FF] to-[#EDE9FE] border border-[#DDD6FE]/70 shadow-[0_4px_14px_rgba(99,91,255,0.14),inset_0_1px_1px_rgba(255,255,255,0.8)] flex items-center justify-center text-[#635BFF] shrink-0">
+                      <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#ECE7FE] via-[#F4F1FF] to-[#EDE9FE] border border-[#DDD6FE]/70 shadow-[0_4px_14px_rgba(99,91,255,0.14),inset_0_1px_1px_rgba(255,255,255,0.8)] flex items-center justify-center text-[#635BFF] shrink-0">
                         <BoltIcon className="w-5 h-5 text-[#635BFF]" />
                       </div>
                       <div>
-                        <h4 className="text-xs sm:text-[13px] font-bold text-slate-900 leading-tight">Quick Response</h4>
-                        <p className="text-[11px] sm:text-xs text-slate-500 font-medium mt-0.5 whitespace-nowrap">Usually within 24 hours</p>
+                        <h4 className="text-[13px] font-bold text-slate-900 leading-tight">Quick Response</h4>
+                        <p className="text-xs text-slate-500 font-medium mt-0.5">Usually within 24 hours</p>
                       </div>
                     </div>
                   </HoverCard>
@@ -142,12 +184,12 @@ export default function ContactPage() {
                 <StaggerItem>
                   <HoverCard hoverY={-3}>
                     <div className="flex items-center gap-3">
-                      <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-br from-[#ECE7FE] via-[#F4F1FF] to-[#EDE9FE] border border-[#DDD6FE]/70 shadow-[0_4px_14px_rgba(99,91,255,0.14),inset_0_1px_1px_rgba(255,255,255,0.8)] flex items-center justify-center text-[#635BFF] shrink-0">
+                      <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#ECE7FE] via-[#F4F1FF] to-[#EDE9FE] border border-[#DDD6FE]/70 shadow-[0_4px_14px_rgba(99,91,255,0.14),inset_0_1px_1px_rgba(255,255,255,0.8)] flex items-center justify-center text-[#635BFF] shrink-0">
                         <UsersIcon className="w-5 h-5 text-[#635BFF]" />
                       </div>
                       <div>
-                        <h4 className="text-xs sm:text-[13px] font-bold text-slate-900 leading-tight">Expert Guidance</h4>
-                        <p className="text-[11px] sm:text-xs text-slate-500 font-medium mt-0.5 whitespace-nowrap">From our specialists</p>
+                        <h4 className="text-[13px] font-bold text-slate-900 leading-tight">Expert Guidance</h4>
+                        <p className="text-xs text-slate-500 font-medium mt-0.5">From our specialists</p>
                       </div>
                     </div>
                   </HoverCard>
@@ -157,12 +199,12 @@ export default function ContactPage() {
                 <StaggerItem>
                   <HoverCard hoverY={-3}>
                     <div className="flex items-center gap-3">
-                      <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-br from-[#ECE7FE] via-[#F4F1FF] to-[#EDE9FE] border border-[#DDD6FE]/70 shadow-[0_4px_14px_rgba(99,91,255,0.14),inset_0_1px_1px_rgba(255,255,255,0.8)] flex items-center justify-center text-[#635BFF] shrink-0">
+                      <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#ECE7FE] via-[#F4F1FF] to-[#EDE9FE] border border-[#DDD6FE]/70 shadow-[0_4px_14px_rgba(99,91,255,0.14),inset_0_1px_1px_rgba(255,255,255,0.8)] flex items-center justify-center text-[#635BFF] shrink-0">
                         <LockIcon className="w-5 h-5 text-[#635BFF]" />
                       </div>
                       <div>
-                        <h4 className="text-xs sm:text-[13px] font-bold text-slate-900 leading-tight">Confidential</h4>
-                        <p className="text-[11px] sm:text-xs text-slate-500 font-medium mt-0.5 whitespace-nowrap">Your ideas are safe with us</p>
+                        <h4 className="text-[13px] font-bold text-slate-900 leading-tight">Confidential</h4>
+                        <p className="text-xs text-slate-500 font-medium mt-0.5">Your ideas are safe with us</p>
                       </div>
                     </div>
                   </HoverCard>
@@ -173,44 +215,28 @@ export default function ContactPage() {
               <FadeIn direction="up" delay={0.25} distance={16} className="hidden md:block">
                 <Float duration={5} distance={5}>
                   <div className="flex items-center gap-3.5 bg-white/85 backdrop-blur-md px-4 sm:px-5 py-2.5 sm:py-3 rounded-2xl border border-white/90 shadow-[0_12px_32px_rgba(99,91,255,0.08),0_2px_8px_rgba(0,0,0,0.04)]">
-                    <div className="flex -space-x-2.5 overflow-hidden">
-                      <div className="relative w-8 h-8 rounded-full border-2 border-white overflow-hidden shadow-xs">
-                        <Image
-                          src="/assets/avatar-client-1.jpg"
-                          alt="Client"
-                          fill
-                          sizes="32px"
-                          className="object-cover"
-                        />
-                      </div>
-                      <div className="relative w-8 h-8 rounded-full border-2 border-white overflow-hidden shadow-xs">
-                        <Image
-                          src="/assets/avatar-client-2.jpg"
-                          alt="Client"
-                          fill
-                          sizes="32px"
-                          className="object-cover"
-                        />
-                      </div>
-                      <div className="relative w-8 h-8 rounded-full border-2 border-white overflow-hidden shadow-xs">
-                        <Image
-                          src="/assets/avatar-client-3.jpg"
-                          alt="Client"
-                          fill
-                          sizes="32px"
-                          className="object-cover"
-                        />
-                      </div>
+                    <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-[#635BFF] to-[#8C85FF] flex items-center justify-center text-white font-black text-sm shadow-xs">
+                      A
                     </div>
                     <div>
-                      <div className="text-[11px] text-slate-500 font-medium leading-none">Trusted by</div>
-                      <div className="text-xs sm:text-[13px] font-extrabold text-slate-900 leading-tight mt-0.5 whitespace-nowrap">
-                        30+ businesses
-                      </div>
+                      <div className="text-xs font-black text-slate-950 tracking-tight">Direct Founder Access</div>
+                      <div className="text-[11px] text-slate-500 font-medium">No middle managers or fluff</div>
                     </div>
                   </div>
                 </Float>
               </FadeIn>
+            </div>
+
+            {/* Mobile Scroll to Explore (Matches media_1789912195105.png) */}
+            <div className="lg:hidden flex flex-col items-center justify-center pt-2.5 pb-1 text-slate-400">
+              <div className="w-7 h-7 rounded-full border border-slate-200/80 bg-white/80 backdrop-blur-xs flex items-center justify-center shadow-2xs mb-0.5">
+                <svg className="w-3.5 h-3.5 text-slate-500 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+              <span className="text-[9px] font-extrabold tracking-[0.2em] text-slate-400 uppercase">
+                Scroll to Explore
+              </span>
             </div>
           </div>
         </section>

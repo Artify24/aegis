@@ -57,26 +57,26 @@ export default function HomePage() {
 
       <main className="flex-grow">
         {/* ===================== HERO SECTION ===================== */}
-        <section className="relative overflow-hidden w-full bg-[#FAFAFD] min-h-[calc(100vh-5rem)] lg:h-[calc(100vh-5.5rem)] lg:min-h-[640px] lg:max-h-[820px] flex flex-col justify-between pt-4 sm:pt-6 lg:pt-8 pb-6 sm:pb-8">
-          {/* Background Graphic with smooth scale fade-in */}
-          <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden anim-fade-scale">
+        <section className="relative overflow-hidden w-full bg-[#FAFAFD] lg:h-[calc(100vh-5.5rem)] lg:min-h-[640px] lg:max-h-[820px] flex flex-col justify-between pt-4 sm:pt-6 lg:pt-8 pb-6 sm:pb-8">
+          {/* Background Graphic with smooth scale fade-in - Desktop only */}
+          <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden anim-fade-scale hidden lg:block">
             <Image
               src="/assets/hero-home.png"
               alt="Turn Your Business Into Possibility"
               fill
               priority
-              sizes="100vw"
-              className="object-cover object-[right_top] lg:object-[82%_top] xl:object-right"
+              sizes="(min-width: 1024px) 100vw, 1px"
+              className="object-cover object-[82%_top] xl:object-right"
             />
-            {/* Soft gradient on mobile/tablet so text remains crystal clear */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#FAFAFD]/95 via-[#FAFAFD]/70 to-transparent lg:hidden" />
           </div>
+          {/* Subtle mobile backdrop gradient so text remains crisp and unobstructed */}
+          <div className="absolute inset-0 pointer-events-none z-0 lg:hidden bg-gradient-to-b from-[#FAF8FE] via-[#F4F0FD]/30 to-[#FAFAFD]" />
 
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-between flex-grow">
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col justify-between flex-grow">
             {/* Top Left Content Area */}
             <FadeIn direction="up" delay={0.08} className="max-w-xl lg:max-w-[560px] pt-2 sm:pt-4 space-y-4 sm:space-y-6">
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white/90 backdrop-blur-xs border border-indigo-100/80 shadow-2xs text-[#635BFF]">
+              <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white/90 backdrop-blur-xs border border-indigo-100/80 shadow-2xs text-[#635BFF]">
                 <span className="w-2 h-2 rounded-full bg-[#635BFF]" />
                 <span className="text-slate-800">AI &amp; Automation Agency</span>
               </div>
@@ -95,11 +95,11 @@ export default function HomePage() {
               </p>
 
               {/* Action Buttons */}
-              <div className="flex flex-wrap items-center gap-4 pt-1">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 pt-1">
                 <HoverScale>
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full text-sm font-semibold text-white bg-[#0B0D17] hover:bg-slate-800 transition-colors shadow-md"
+                    className="inline-flex items-center justify-center gap-2 px-7 py-3 sm:py-3.5 rounded-full text-sm font-bold text-white bg-[#635BFF] hover:bg-[#5247E6] transition-colors shadow-md hover:shadow-indigo-500/25 w-auto text-center"
                   >
                     <span>Book a Free Call</span>
                     <ArrowRightIcon className="w-4 h-4" />
@@ -108,21 +108,68 @@ export default function HomePage() {
                 <HoverScale>
                   <Link
                     href="/services"
-                    className="inline-flex items-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full text-sm font-semibold text-slate-800 bg-white/90 backdrop-blur-xs border border-slate-300 hover:bg-white transition-colors"
+                    className="inline-flex items-center justify-center gap-1.5 px-1 py-1.5 text-sm font-bold text-slate-900 border-b border-slate-900 sm:border-0 sm:px-7 sm:py-3.5 sm:rounded-full sm:bg-white/90 sm:backdrop-blur-xs sm:border sm:border-slate-300 hover:text-[#635BFF] sm:hover:bg-white transition-all w-auto text-center"
                   >
                     <span>See Our Work</span>
-                    <ArrowRightIcon className="w-4 h-4" />
+                    <ArrowRightIcon className="w-3.5 h-3.5" />
                   </Link>
                 </HoverScale>
               </div>
+
+              {/* Seamless 3D Mascot Character on Mobile (Matches media_1789912195105.png) */}
+              <div className="lg:hidden relative w-full flex justify-center pt-2 sm:pt-4">
+                <div className="relative w-[280px] sm:w-[340px] aspect-[740/880]">
+                  <Image
+                    src="/assets/hero-girl-mobile.png"
+                    alt="Aegis AI Mascot"
+                    fill
+                    priority
+                    sizes="(max-width: 640px) 280px, 340px"
+                    className="object-contain object-bottom select-none pointer-events-none drop-shadow-[0_16px_36px_rgba(99,91,255,0.18)]"
+                  />
+                </div>
+              </div>
             </FadeIn>
 
-            {/* Bottom Feature Bar: "Save Hours", "Reduce Costs", "Scale Faster", "Stay Secure" */}
-            <FadeIn direction="up" delay={0.25} className="w-full bg-white/95 backdrop-blur-md border border-white/80 rounded-[30px] sm:rounded-full px-6 sm:px-8 lg:px-10 py-4 sm:py-5 shadow-[0_16px_50px_-12px_rgba(99,91,255,0.08),0_2px_8px_rgba(0,0,0,0.02)]">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0">
+            {/* Bottom Feature Bar: Matches media_1789912195105.png on mobile, desktop reference on lg */}
+            <FadeIn direction="up" delay={0.25} className="w-full bg-white/95 backdrop-blur-md border border-white/80 rounded-[24px] sm:rounded-[28px] lg:rounded-full px-3 py-3 sm:px-6 sm:py-4 lg:px-10 lg:py-5 shadow-[0_12px_36px_-8px_rgba(99,91,255,0.08),0_2px_8px_rgba(0,0,0,0.02)] mt-2 lg:mt-0 relative z-10">
+              {/* Mobile 4-Column Compact Layout (Matches media_1789912195105.png) */}
+              <div className="grid grid-cols-4 gap-1 sm:gap-2 items-center text-center lg:hidden">
+                {/* 1. Save Hours */}
+                <div className="flex flex-col items-center">
+                  <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-b from-[#F7F5FF] via-[#EFEAFF] to-[#E5DCFF] border border-[#E0D5FF] flex items-center justify-center shrink-0 shadow-2xs mb-1">
+                    <BoltIcon className="w-4 h-4 sm:w-5 sm:h-5 text-[#635BFF]" />
+                  </div>
+                  <span className="text-[10.5px] sm:text-xs font-bold text-[#0B0D17] leading-tight tracking-tight">Save Hours</span>
+                </div>
+                {/* 2. Reduce Costs */}
+                <div className="flex flex-col items-center">
+                  <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-b from-[#F7F5FF] via-[#EFEAFF] to-[#E5DCFF] border border-[#E0D5FF] flex items-center justify-center shrink-0 shadow-2xs mb-1">
+                    <LayersIcon className="w-4 h-4 sm:w-5 sm:h-5 text-[#635BFF]" />
+                  </div>
+                  <span className="text-[10.5px] sm:text-xs font-bold text-[#0B0D17] leading-tight tracking-tight">Reduce Costs</span>
+                </div>
+                {/* 3. Scale Faster */}
+                <div className="flex flex-col items-center">
+                  <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-b from-[#F7F5FF] via-[#EFEAFF] to-[#E5DCFF] border border-[#E0D5FF] flex items-center justify-center shrink-0 shadow-2xs mb-1">
+                    <ScaleIcon className="w-4 h-4 sm:w-5 sm:h-5 text-[#635BFF]" />
+                  </div>
+                  <span className="text-[10.5px] sm:text-xs font-bold text-[#0B0D17] leading-tight tracking-tight">Scale Faster</span>
+                </div>
+                {/* 4. Stay Secure */}
+                <div className="flex flex-col items-center">
+                  <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-b from-[#F7F5FF] via-[#EFEAFF] to-[#E5DCFF] border border-[#E0D5FF] flex items-center justify-center shrink-0 shadow-2xs mb-1">
+                    <ShieldIcon className="w-4 h-4 sm:w-5 sm:h-5 text-[#635BFF]" />
+                  </div>
+                  <span className="text-[10.5px] sm:text-xs font-bold text-[#0B0D17] leading-tight tracking-tight">Stay Secure</span>
+                </div>
+              </div>
+
+              {/* Desktop 4-Column Detailed Layout (100% Unchanged) */}
+              <div className="hidden lg:grid lg:grid-cols-4 lg:gap-0">
                 {/* 1. Save Hours */}
                 <HoverCard hoverY={-3} className="flex items-center gap-4 lg:pr-6 cursor-default">
-                  <div className="w-14 h-14 sm:w-15 sm:h-15 rounded-[22px] bg-gradient-to-b from-[#F7F5FF] via-[#EFEAFF] to-[#E5DCFF] border border-[#E0D5FF] flex items-center justify-center shrink-0 shadow-[0_10px_22px_-6px_rgba(99,91,255,0.22),inset_0_1px_2px_rgba(255,255,255,1)]">
+                  <div className="w-14 sm:w-15 sm:h-15 rounded-[22px] bg-gradient-to-b from-[#F7F5FF] via-[#EFEAFF] to-[#E5DCFF] border border-[#E0D5FF] flex items-center justify-center shrink-0 shadow-[0_10px_22px_-6px_rgba(99,91,255,0.22),inset_0_1px_2px_rgba(255,255,255,1)]">
                     <svg viewBox="0 0 24 24" className="w-6 h-6 fill-[#635BFF]" xmlns="http://www.w3.org/2000/svg">
                       <path d="M13 2L3.5 13.5h7L8.5 22l12-12.5h-7.5L13 2z" />
                     </svg>
@@ -135,9 +182,8 @@ export default function HomePage() {
 
                 {/* 2. Reduce Costs */}
                 <HoverCard hoverY={-3} className="flex items-center gap-4 lg:px-6 lg:border-l lg:border-slate-100 cursor-default">
-                  <div className="w-14 h-14 sm:w-15 sm:h-15 rounded-[22px] bg-gradient-to-b from-[#F7F5FF] via-[#EFEAFF] to-[#E5DCFF] border border-[#E0D5FF] flex items-center justify-center shrink-0 shadow-[0_10px_22px_-6px_rgba(99,91,255,0.22),inset_0_1px_2px_rgba(255,255,255,1)]">
+                  <div className="w-14 sm:w-15 sm:h-15 rounded-[22px] bg-gradient-to-b from-[#F7F5FF] via-[#EFEAFF] to-[#E5DCFF] border border-[#E0D5FF] flex items-center justify-center shrink-0 shadow-[0_10px_22px_-6px_rgba(99,91,255,0.22),inset_0_1px_2px_rgba(255,255,255,1)]">
                     <svg viewBox="0 0 24 24" className="w-6 h-6 fill-none" xmlns="http://www.w3.org/2000/svg">
-                      {/* 3 Isometric Stacked Layers */}
                       <path d="M12 3L3.5 7.2L12 11.4L20.5 7.2L12 3Z" fill="#635BFF" />
                       <path d="M3.5 11.2L12 15.4L20.5 11.2" stroke="#635BFF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                       <path d="M3.5 15.2L12 19.4L20.5 15.2" stroke="#635BFF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -151,35 +197,45 @@ export default function HomePage() {
 
                 {/* 3. Scale Faster */}
                 <HoverCard hoverY={-3} className="flex items-center gap-4 lg:px-6 lg:border-l lg:border-slate-100 cursor-default">
-                  <div className="w-14 h-14 sm:w-15 sm:h-15 rounded-[22px] bg-gradient-to-b from-[#F7F5FF] via-[#EFEAFF] to-[#E5DCFF] border border-[#E0D5FF] flex items-center justify-center shrink-0 shadow-[0_10px_22px_-6px_rgba(99,91,255,0.22),inset_0_1px_2px_rgba(255,255,255,1)]">
+                  <div className="w-14 sm:w-15 sm:h-15 rounded-[22px] bg-gradient-to-b from-[#F7F5FF] via-[#EFEAFF] to-[#E5DCFF] border border-[#E0D5FF] flex items-center justify-center shrink-0 shadow-[0_10px_22px_-6px_rgba(99,91,255,0.22),inset_0_1px_2px_rgba(255,255,255,1)]">
                     <svg viewBox="0 0 24 24" className="w-6 h-6 fill-none" xmlns="http://www.w3.org/2000/svg">
-                      {/* Box with scaling growth indicator */}
                       <rect x="3.5" y="4.5" width="17" height="15" rx="3.5" fill="#635BFF" />
                       <path d="M8.5 14L15.5 7M15.5 7H11M15.5 7V11.5" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
                   <div>
                     <h4 className="text-[15px] sm:text-base font-bold text-[#0B0D17] tracking-tight">Scale Faster</h4>
-                    <p className="text-xs sm:text-[13px] text-slate-500 font-normal mt-0.5 tracking-tight">Systems that grow with you</p>
+                    <p className="text-xs sm:text-[13px] text-slate-500 font-normal mt-0.5 tracking-tight">Grow with you</p>
                   </div>
                 </HoverCard>
 
                 {/* 4. Stay Secure */}
                 <HoverCard hoverY={-3} className="flex items-center gap-4 lg:pl-6 lg:border-l lg:border-slate-100 cursor-default">
-                  <div className="w-14 h-14 sm:w-15 sm:h-15 rounded-[22px] bg-gradient-to-b from-[#F7F5FF] via-[#EFEAFF] to-[#E5DCFF] border border-[#E0D5FF] flex items-center justify-center shrink-0 shadow-[0_10px_22px_-6px_rgba(99,91,255,0.22),inset_0_1px_2px_rgba(255,255,255,1)]">
+                  <div className="w-14 sm:w-15 sm:h-15 rounded-[22px] bg-gradient-to-b from-[#F7F5FF] via-[#EFEAFF] to-[#E5DCFF] border border-[#E0D5FF] flex items-center justify-center shrink-0 shadow-[0_10px_22px_-6px_rgba(99,91,255,0.22),inset_0_1px_2px_rgba(255,255,255,1)]">
                     <svg viewBox="0 0 24 24" className="w-6 h-6 fill-none" xmlns="http://www.w3.org/2000/svg">
-                      {/* Shield with 4-point star in center */}
                       <path d="M12 2.5L4.5 5.8v6.2c0 5.4 3.2 10.3 7.5 11.5 4.3-1.2 7.5-6.1 7.5-11.5V5.8L12 2.5z" fill="#635BFF" />
                       <path d="M12 7.8l.75 2.45 2.45.75-2.45.75L12 14.2l-.75-2.45-2.45-.75 2.45-.75L12 7.8z" fill="white" />
                     </svg>
                   </div>
                   <div>
                     <h4 className="text-[15px] sm:text-base font-bold text-[#0B0D17] tracking-tight">Stay Secure</h4>
-                    <p className="text-xs sm:text-[13px] text-slate-500 font-normal mt-0.5 tracking-tight">Enterprise-grade security</p>
+                    <p className="text-xs sm:text-[13px] text-slate-500 font-normal mt-0.5 tracking-tight">Enterprise security</p>
                   </div>
                 </HoverCard>
               </div>
             </FadeIn>
+
+            {/* Mobile Scroll to Explore (Matches media_1789912195105.png) */}
+            <div className="lg:hidden flex flex-col items-center justify-center pt-2.5 pb-1 text-slate-400">
+              <div className="w-7 h-7 rounded-full border border-slate-200/80 bg-white/80 backdrop-blur-xs flex items-center justify-center shadow-2xs mb-0.5">
+                <svg className="w-3.5 h-3.5 text-slate-500 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+              <span className="text-[9px] font-extrabold tracking-[0.2em] text-slate-400 uppercase">
+                Scroll to Explore
+              </span>
+            </div>
           </div>
         </section>
       
@@ -227,76 +283,84 @@ export default function HomePage() {
               </FadeIn>
 
               {/* Right Column 4 Cards Side-by-Side */}
-              <StaggerContainer className="w-full flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4 xl:gap-4.5">
+              <StaggerContainer className="w-full flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 xl:gap-4.5">
                 {/* Card 1: AI Chatbots */}
                 <StaggerItem direction="up">
-                  <HoverCard hoverY={-8} className="group rounded-[28px] sm:rounded-[32px] bg-white border border-slate-100/90 p-5.5 sm:p-6 xl:p-6.5 flex flex-col justify-start shadow-[0_4px_24px_rgba(99,91,255,0.04),0_1px_2px_rgba(0,0,0,0.02)] hover:shadow-[0_14px_36px_rgba(99,91,255,0.1)] transition-all duration-300 min-h-[250px] sm:min-h-[270px]">
-                    <div className="relative w-16 h-16 sm:w-[68px] sm:h-[68px] xl:w-[72px] xl:h-[72px] flex items-center justify-center shrink-0 mb-6 xl:mb-7">
-                      <div className="absolute -inset-1.5 rounded-[26px] bg-[#635BFF]/18 blur-[9px] pointer-events-none" />
-                      <div className="relative w-full h-full rounded-[24px] bg-gradient-to-b from-white via-[#F3EFFF] to-[#DDD3FE] border border-white shadow-[inset_0_2.5px_4px_rgba(255,255,255,1),inset_0_-2.5px_4px_rgba(109,40,217,0.12),0_6px_18px_rgba(99,91,255,0.16)] flex items-center justify-center">
-                        <SolidChatIcon className="w-8 h-8 sm:w-[34px] sm:h-[34px] text-[#635BFF]" />
+                  <HoverCard hoverY={-8} className="group rounded-[24px] sm:rounded-[32px] bg-white border border-slate-100/90 p-4 sm:p-6 xl:p-6.5 flex flex-row sm:flex-col items-center sm:items-start gap-4 sm:gap-0 shadow-[0_4px_24px_rgba(99,91,255,0.04),0_1px_2px_rgba(0,0,0,0.02)] hover:shadow-[0_14px_36px_rgba(99,91,255,0.1)] transition-all duration-300 min-h-0 sm:min-h-[270px]">
+                    <div className="relative w-13 h-13 sm:w-[68px] sm:h-[68px] xl:w-[72px] xl:h-[72px] flex items-center justify-center shrink-0 mb-0 sm:mb-6 xl:mb-7">
+                      <div className="absolute -inset-1 rounded-[20px] sm:rounded-[26px] bg-[#635BFF]/18 blur-[8px] pointer-events-none" />
+                      <div className="relative w-full h-full rounded-[18px] sm:rounded-[24px] bg-gradient-to-b from-white via-[#F3EFFF] to-[#DDD3FE] border border-white shadow-[inset_0_2px_3px_rgba(255,255,255,1),inset_0_-2px_3px_rgba(109,40,217,0.12),0_6px_16px_rgba(99,91,255,0.14)] flex items-center justify-center">
+                        <SolidChatIcon className="w-6 h-6 sm:w-[34px] sm:h-[34px] text-[#635BFF]" />
                       </div>
                     </div>
-                    <h3 className="font-extrabold text-slate-950 text-base sm:text-[17px] xl:text-[18.5px] tracking-tight group-hover:text-[#635BFF] transition-colors whitespace-nowrap">
-                      AI Chatbots
-                    </h3>
-                    <p className="text-slate-500 text-[13px] sm:text-[13.5px] xl:text-[14px] leading-relaxed mt-2 font-normal">
-                      Customer support, sales and internal assistants.
-                    </p>
+                    <div>
+                      <h3 className="font-extrabold text-slate-950 text-[15px] sm:text-[17px] xl:text-[18.5px] tracking-tight group-hover:text-[#635BFF] transition-colors">
+                        AI Chatbots
+                      </h3>
+                      <p className="text-slate-500 text-xs sm:text-[13.5px] xl:text-[14px] leading-relaxed mt-1 sm:mt-2 font-normal">
+                        Customer support, sales and internal assistants.
+                      </p>
+                    </div>
                   </HoverCard>
                 </StaggerItem>
 
                 {/* Card 2: Process Automation */}
                 <StaggerItem direction="up">
-                  <HoverCard hoverY={-8} className="group rounded-[28px] sm:rounded-[32px] bg-white border border-slate-100/90 p-5.5 sm:p-6 xl:p-6.5 flex flex-col justify-start shadow-[0_4px_24px_rgba(99,91,255,0.04),0_1px_2px_rgba(0,0,0,0.02)] hover:shadow-[0_14px_36px_rgba(99,91,255,0.1)] transition-all duration-300 min-h-[250px] sm:min-h-[270px]">
-                    <div className="relative w-16 h-16 sm:w-[68px] sm:h-[68px] xl:w-[72px] xl:h-[72px] flex items-center justify-center shrink-0 mb-6 xl:mb-7">
-                      <div className="absolute -inset-1.5 rounded-[26px] bg-[#635BFF]/18 blur-[9px] pointer-events-none" />
-                      <div className="relative w-full h-full rounded-[24px] bg-gradient-to-b from-white via-[#F3EFFF] to-[#DDD3FE] border border-white shadow-[inset_0_2.5px_4px_rgba(255,255,255,1),inset_0_-2.5px_4px_rgba(109,40,217,0.12),0_6px_18px_rgba(99,91,255,0.16)] flex items-center justify-center">
-                        <SolidGearIcon className="w-8 h-8 sm:w-[34px] sm:h-[34px] text-[#635BFF]" />
+                  <HoverCard hoverY={-8} className="group rounded-[24px] sm:rounded-[32px] bg-white border border-slate-100/90 p-4 sm:p-6 xl:p-6.5 flex flex-row sm:flex-col items-center sm:items-start gap-4 sm:gap-0 shadow-[0_4px_24px_rgba(99,91,255,0.04),0_1px_2px_rgba(0,0,0,0.02)] hover:shadow-[0_14px_36px_rgba(99,91,255,0.1)] transition-all duration-300 min-h-0 sm:min-h-[270px]">
+                    <div className="relative w-13 h-13 sm:w-[68px] sm:h-[68px] xl:w-[72px] xl:h-[72px] flex items-center justify-center shrink-0 mb-0 sm:mb-6 xl:mb-7">
+                      <div className="absolute -inset-1 rounded-[20px] sm:rounded-[26px] bg-[#635BFF]/18 blur-[8px] pointer-events-none" />
+                      <div className="relative w-full h-full rounded-[18px] sm:rounded-[24px] bg-gradient-to-b from-white via-[#F3EFFF] to-[#DDD3FE] border border-white shadow-[inset_0_2px_3px_rgba(255,255,255,1),inset_0_-2px_3px_rgba(109,40,217,0.12),0_6px_16px_rgba(99,91,255,0.14)] flex items-center justify-center">
+                        <SolidGearIcon className="w-6 h-6 sm:w-[34px] sm:h-[34px] text-[#635BFF]" />
                       </div>
                     </div>
-                    <h3 className="font-extrabold text-slate-950 text-base sm:text-[17px] xl:text-[18.5px] tracking-tight group-hover:text-[#635BFF] transition-colors whitespace-nowrap">
-                      Process Automation
-                    </h3>
-                    <p className="text-slate-500 text-[13px] sm:text-[13.5px] xl:text-[14px] leading-relaxed mt-2 font-normal">
-                      Automate repetitive tasks and workflows.
-                    </p>
+                    <div>
+                      <h3 className="font-extrabold text-slate-950 text-[15px] sm:text-[17px] xl:text-[18.5px] tracking-tight group-hover:text-[#635BFF] transition-colors">
+                        Process Automation
+                      </h3>
+                      <p className="text-slate-500 text-xs sm:text-[13.5px] xl:text-[14px] leading-relaxed mt-1 sm:mt-2 font-normal">
+                        Automate repetitive tasks and workflows.
+                      </p>
+                    </div>
                   </HoverCard>
                 </StaggerItem>
 
                 {/* Card 3: Custom AI Solutions */}
                 <StaggerItem direction="up">
-                  <HoverCard hoverY={-8} className="group rounded-[28px] sm:rounded-[32px] bg-white border border-slate-100/90 p-5.5 sm:p-6 xl:p-6.5 flex flex-col justify-start shadow-[0_4px_24px_rgba(99,91,255,0.04),0_1px_2px_rgba(0,0,0,0.02)] hover:shadow-[0_14px_36px_rgba(99,91,255,0.1)] transition-all duration-300 min-h-[250px] sm:min-h-[270px]">
-                    <div className="relative w-16 h-16 sm:w-[68px] sm:h-[68px] xl:w-[72px] xl:h-[72px] flex items-center justify-center shrink-0 mb-6 xl:mb-7">
-                      <div className="absolute -inset-1.5 rounded-[26px] bg-[#635BFF]/18 blur-[9px] pointer-events-none" />
-                      <div className="relative w-full h-full rounded-[24px] bg-gradient-to-b from-white via-[#F3EFFF] to-[#DDD3FE] border border-white shadow-[inset_0_2.5px_4px_rgba(255,255,255,1),inset_0_-2.5px_4px_rgba(109,40,217,0.12),0_6px_18px_rgba(99,91,255,0.16)] flex items-center justify-center">
-                        <SolidLayersIcon className="w-8 h-8 sm:w-[34px] sm:h-[34px] text-[#635BFF]" />
+                  <HoverCard hoverY={-8} className="group rounded-[24px] sm:rounded-[32px] bg-white border border-slate-100/90 p-4 sm:p-6 xl:p-6.5 flex flex-row sm:flex-col items-center sm:items-start gap-4 sm:gap-0 shadow-[0_4px_24px_rgba(99,91,255,0.04),0_1px_2px_rgba(0,0,0,0.02)] hover:shadow-[0_14px_36px_rgba(99,91,255,0.1)] transition-all duration-300 min-h-0 sm:min-h-[270px]">
+                    <div className="relative w-13 h-13 sm:w-[68px] sm:h-[68px] xl:w-[72px] xl:h-[72px] flex items-center justify-center shrink-0 mb-0 sm:mb-6 xl:mb-7">
+                      <div className="absolute -inset-1 rounded-[20px] sm:rounded-[26px] bg-[#635BFF]/18 blur-[8px] pointer-events-none" />
+                      <div className="relative w-full h-full rounded-[18px] sm:rounded-[24px] bg-gradient-to-b from-white via-[#F3EFFF] to-[#DDD3FE] border border-white shadow-[inset_0_2px_3px_rgba(255,255,255,1),inset_0_-2px_3px_rgba(109,40,217,0.12),0_6px_16px_rgba(99,91,255,0.14)] flex items-center justify-center">
+                        <SolidLayersIcon className="w-6 h-6 sm:w-[34px] sm:h-[34px] text-[#635BFF]" />
                       </div>
                     </div>
-                    <h3 className="font-extrabold text-slate-950 text-base sm:text-[17px] xl:text-[18.5px] tracking-tight group-hover:text-[#635BFF] transition-colors whitespace-nowrap">
-                      Custom AI Solutions
-                    </h3>
-                    <p className="text-slate-500 text-[13px] sm:text-[13.5px] xl:text-[14px] leading-relaxed mt-2 font-normal">
-                      Tailored systems for your business needs.
-                    </p>
+                    <div>
+                      <h3 className="font-extrabold text-slate-950 text-[15px] sm:text-[17px] xl:text-[18.5px] tracking-tight group-hover:text-[#635BFF] transition-colors">
+                        Custom AI Solutions
+                      </h3>
+                      <p className="text-slate-500 text-xs sm:text-[13.5px] xl:text-[14px] leading-relaxed mt-1 sm:mt-2 font-normal">
+                        Tailored systems for your business needs.
+                      </p>
+                    </div>
                   </HoverCard>
                 </StaggerItem>
 
                 {/* Card 4: AI Integration */}
                 <StaggerItem direction="up">
-                  <HoverCard hoverY={-8} className="group rounded-[28px] sm:rounded-[32px] bg-white border border-slate-100/90 p-5.5 sm:p-6 xl:p-6.5 flex flex-col justify-start shadow-[0_4px_24px_rgba(99,91,255,0.04),0_1px_2px_rgba(0,0,0,0.02)] hover:shadow-[0_14px_36px_rgba(99,91,255,0.1)] transition-all duration-300 min-h-[250px] sm:min-h-[270px]">
-                    <div className="relative w-16 h-16 sm:w-[68px] sm:h-[68px] xl:w-[72px] xl:h-[72px] flex items-center justify-center shrink-0 mb-6 xl:mb-7">
-                      <div className="absolute -inset-1.5 rounded-[26px] bg-[#635BFF]/18 blur-[9px] pointer-events-none" />
-                      <div className="relative w-full h-full rounded-[24px] bg-gradient-to-b from-white via-[#F3EFFF] to-[#DDD3FE] border border-white shadow-[inset_0_2.5px_4px_rgba(255,255,255,1),inset_0_-2.5px_4px_rgba(109,40,217,0.12),0_6px_18px_rgba(99,91,255,0.16)] flex items-center justify-center">
-                        <SolidLinkIcon className="w-8 h-8 sm:w-[34px] sm:h-[34px] text-[#635BFF]" />
+                  <HoverCard hoverY={-8} className="group rounded-[24px] sm:rounded-[32px] bg-white border border-slate-100/90 p-4 sm:p-6 xl:p-6.5 flex flex-row sm:flex-col items-center sm:items-start gap-4 sm:gap-0 shadow-[0_4px_24px_rgba(99,91,255,0.04),0_1px_2px_rgba(0,0,0,0.02)] hover:shadow-[0_14px_36px_rgba(99,91,255,0.1)] transition-all duration-300 min-h-0 sm:min-h-[270px]">
+                    <div className="relative w-13 h-13 sm:w-[68px] sm:h-[68px] xl:w-[72px] xl:h-[72px] flex items-center justify-center shrink-0 mb-0 sm:mb-6 xl:mb-7">
+                      <div className="absolute -inset-1 rounded-[20px] sm:rounded-[26px] bg-[#635BFF]/18 blur-[8px] pointer-events-none" />
+                      <div className="relative w-full h-full rounded-[18px] sm:rounded-[24px] bg-gradient-to-b from-white via-[#F3EFFF] to-[#DDD3FE] border border-white shadow-[inset_0_2px_3px_rgba(255,255,255,1),inset_0_-2px_3px_rgba(109,40,217,0.12),0_6px_16px_rgba(99,91,255,0.14)] flex items-center justify-center">
+                        <SolidLinkIcon className="w-6 h-6 sm:w-[34px] sm:h-[34px] text-[#635BFF]" />
                       </div>
                     </div>
-                    <h3 className="font-extrabold text-slate-950 text-base sm:text-[17px] xl:text-[18.5px] tracking-tight group-hover:text-[#635BFF] transition-colors whitespace-nowrap">
-                      AI Integration
-                    </h3>
-                    <p className="text-slate-500 text-[13px] sm:text-[13.5px] xl:text-[14px] leading-relaxed mt-2 font-normal">
-                      Connect your tools and data seamlessly.
-                    </p>
+                    <div>
+                      <h3 className="font-extrabold text-slate-950 text-[15px] sm:text-[17px] xl:text-[18.5px] tracking-tight group-hover:text-[#635BFF] transition-colors">
+                        AI Integration
+                      </h3>
+                      <p className="text-slate-500 text-xs sm:text-[13.5px] xl:text-[14px] leading-relaxed mt-1 sm:mt-2 font-normal">
+                        Connect your tools and data seamlessly.
+                      </p>
+                    </div>
                   </HoverCard>
                 </StaggerItem>
               </StaggerContainer>
@@ -346,120 +410,141 @@ export default function HomePage() {
               </FadeIn>
 
               {/* Right Column 4 Steps */}
-              <StaggerContainer staggerDelay={0.14} className="w-full flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-6 lg:gap-0">
+              <StaggerContainer staggerDelay={0.14} className="w-full flex-1 grid grid-cols-1 lg:grid-cols-4 gap-6 sm:gap-7 lg:gap-0">
                 {/* Step 01 */}
-                <StaggerItem direction="up" className="flex flex-col pr-2 lg:pr-3">
-                  <div className="flex items-center w-full">
-                    {/* 3D Pillowy Cushion Circular Badge with Gentle Float */}
-                    <Float duration={4.5} distance={6}>
-                      <div className="relative w-16 h-16 sm:w-[68px] sm:h-[68px] xl:w-[72px] xl:h-[72px] flex items-center justify-center shrink-0">
-                        <div className="absolute inset-0 rounded-full bg-[#635BFF]/18 blur-[9px] pointer-events-none scale-110" />
-                        <div className="relative w-full h-full rounded-full bg-gradient-to-b from-white via-[#F3EFFF] to-[#DDD3FE] border border-white shadow-[inset_0_2.5px_4px_rgba(255,255,255,1),inset_0_-2.5px_4px_rgba(109,40,217,0.12),0_6px_18px_rgba(99,91,255,0.16)] flex items-center justify-center">
-                          <ProcessSearchIcon className="w-8 h-8 sm:w-[34px] sm:h-[34px] text-[#635BFF]" />
+                <StaggerItem direction="up" className="flex flex-col pr-0 lg:pr-3">
+                  <div className="flex items-start gap-4 lg:flex-col lg:gap-0">
+                    <div className="flex flex-col items-center shrink-0">
+                      {/* 3D Pillowy Cushion Circular Badge with Gentle Float */}
+                      <Float duration={4.5} distance={6}>
+                        <div className="relative w-13 h-13 sm:w-[68px] sm:h-[68px] xl:w-[72px] xl:h-[72px] flex items-center justify-center shrink-0">
+                          <div className="absolute inset-0 rounded-full bg-[#635BFF]/18 blur-[9px] pointer-events-none scale-110" />
+                          <div className="relative w-full h-full rounded-full bg-gradient-to-b from-white via-[#F3EFFF] to-[#DDD3FE] border border-white shadow-[inset_0_2px_3px_rgba(255,255,255,1),inset_0_-2px_3px_rgba(109,40,217,0.12),0_6px_18px_rgba(99,91,255,0.16)] flex items-center justify-center">
+                            <ProcessSearchIcon className="w-6 h-6 sm:w-[34px] sm:h-[34px] text-[#635BFF]" />
+                          </div>
                         </div>
-                      </div>
-                    </Float>
-                    {/* Dotted Arrow to Step 2 */}
+                      </Float>
+                      {/* Mobile Vertical Connector Line */}
+                      <div className="w-0.5 h-10 bg-indigo-100 mt-2 rounded-full lg:hidden" />
+                    </div>
+
+                    {/* Desktop Dotted Arrow to Step 2 */}
                     <div className="hidden lg:flex flex-1 items-center px-2 sm:px-3">
                       <svg className="w-full h-3.5" viewBox="0 0 100 12" fill="none" preserveAspectRatio="none">
                         <line x1="0" y1="6" x2="86" y2="6" stroke="#94A3B8" strokeWidth="1.6" strokeDasharray="4 4" />
                         <path d="M82 2L88 6L82 10" stroke="#94A3B8" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </div>
-                  </div>
-                  {/* Step Text */}
-                  <div className="mt-6 sm:mt-7">
-                    <span className="text-sm sm:text-base font-black text-slate-900 block tracking-tight">01</span>
-                    <h3 className="font-extrabold text-slate-950 text-base sm:text-[18px] xl:text-[19px] tracking-tight mt-1.5">Discover</h3>
-                    <p className="text-slate-500 text-[13px] sm:text-[13.5px] xl:text-[14px] leading-relaxed mt-2 font-normal max-w-[190px]">
-                      Understand your goals and challenges.
-                    </p>
+
+                    {/* Step Text */}
+                    <div className="pt-0.5 lg:pt-0 lg:mt-6 sm:lg:mt-7">
+                      <span className="text-xs sm:text-base font-black text-[#635BFF] lg:text-slate-900 block tracking-tight">01</span>
+                      <h3 className="font-extrabold text-slate-950 text-base sm:text-[18px] xl:text-[19px] tracking-tight mt-0.5 sm:mt-1.5">Discover</h3>
+                      <p className="text-slate-500 text-xs sm:text-[13.5px] xl:text-[14px] leading-relaxed mt-1 sm:mt-2 font-normal max-w-[240px]">
+                        Understand your goals and challenges.
+                      </p>
+                    </div>
                   </div>
                 </StaggerItem>
 
                 {/* Step 02 */}
-                <StaggerItem direction="up" className="flex flex-col lg:pl-5 xl:pl-6 pr-2 lg:pr-3 relative">
-                  <div className="flex items-center w-full">
-                    {/* 3D Pillowy Cushion Circular Badge with Gentle Float */}
-                    <Float duration={5.1} distance={6}>
-                      <div className="relative w-16 h-16 sm:w-[68px] sm:h-[68px] xl:w-[72px] xl:h-[72px] flex items-center justify-center shrink-0">
-                        <div className="absolute inset-0 rounded-full bg-[#635BFF]/18 blur-[9px] pointer-events-none scale-110" />
-                        <div className="relative w-full h-full rounded-full bg-gradient-to-b from-white via-[#F3EFFF] to-[#DDD3FE] border border-white shadow-[inset_0_2.5px_4px_rgba(255,255,255,1),inset_0_-2.5px_4px_rgba(109,40,217,0.12),0_6px_18px_rgba(99,91,255,0.16)] flex items-center justify-center">
-                          <ProcessBulbIcon className="w-8 h-8 sm:w-[34px] sm:h-[34px] text-[#635BFF]" />
+                <StaggerItem direction="up" className="flex flex-col lg:pl-5 xl:pl-6 pr-0 lg:pr-3 relative">
+                  <div className="flex items-start gap-4 lg:flex-col lg:gap-0">
+                    <div className="flex flex-col items-center shrink-0">
+                      {/* 3D Pillowy Cushion Circular Badge with Gentle Float */}
+                      <Float duration={5.1} distance={6}>
+                        <div className="relative w-13 h-13 sm:w-[68px] sm:h-[68px] xl:w-[72px] xl:h-[72px] flex items-center justify-center shrink-0">
+                          <div className="absolute inset-0 rounded-full bg-[#635BFF]/18 blur-[9px] pointer-events-none scale-110" />
+                          <div className="relative w-full h-full rounded-full bg-gradient-to-b from-white via-[#F3EFFF] to-[#DDD3FE] border border-white shadow-[inset_0_2px_3px_rgba(255,255,255,1),inset_0_-2px_3px_rgba(109,40,217,0.12),0_6px_18px_rgba(99,91,255,0.16)] flex items-center justify-center">
+                            <ProcessBulbIcon className="w-6 h-6 sm:w-[34px] sm:h-[34px] text-[#635BFF]" />
+                          </div>
                         </div>
-                      </div>
-                    </Float>
-                    {/* Dotted Arrow to Step 3 */}
+                      </Float>
+                      {/* Mobile Vertical Connector Line */}
+                      <div className="w-0.5 h-10 bg-indigo-100 mt-2 rounded-full lg:hidden" />
+                    </div>
+
+                    {/* Desktop Dotted Arrow to Step 3 */}
                     <div className="hidden lg:flex flex-1 items-center px-2 sm:px-3">
                       <svg className="w-full h-3.5" viewBox="0 0 100 12" fill="none" preserveAspectRatio="none">
                         <line x1="0" y1="6" x2="86" y2="6" stroke="#94A3B8" strokeWidth="1.6" strokeDasharray="4 4" />
                         <path d="M82 2L88 6L82 10" stroke="#94A3B8" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </div>
-                  </div>
-                  {/* Step Text with Vertical Divider Line */}
-                  <div className="mt-6 sm:mt-7 relative">
-                    <div className="hidden lg:block absolute -left-5 xl:-left-6 top-1 bottom-1 w-px bg-slate-200" />
-                    <span className="text-sm sm:text-base font-black text-slate-900 block tracking-tight">02</span>
-                    <h3 className="font-extrabold text-slate-950 text-base sm:text-[18px] xl:text-[19px] tracking-tight mt-1.5">Design</h3>
-                    <p className="text-slate-500 text-[13px] sm:text-[13.5px] xl:text-[14px] leading-relaxed mt-2 font-normal max-w-[190px]">
-                      Create a tailored solution strategy.
-                    </p>
+
+                    {/* Step Text with Vertical Divider Line */}
+                    <div className="pt-0.5 lg:pt-0 lg:mt-6 sm:lg:mt-7 relative">
+                      <div className="hidden lg:block absolute -left-5 xl:-left-6 top-1 bottom-1 w-px bg-slate-200" />
+                      <span className="text-xs sm:text-base font-black text-[#635BFF] lg:text-slate-900 block tracking-tight">02</span>
+                      <h3 className="font-extrabold text-slate-950 text-base sm:text-[18px] xl:text-[19px] tracking-tight mt-0.5 sm:mt-1.5">Design</h3>
+                      <p className="text-slate-500 text-xs sm:text-[13.5px] xl:text-[14px] leading-relaxed mt-1 sm:mt-2 font-normal max-w-[240px]">
+                        Create a tailored solution strategy.
+                      </p>
+                    </div>
                   </div>
                 </StaggerItem>
 
                 {/* Step 03 */}
-                <StaggerItem direction="up" className="flex flex-col lg:pl-5 xl:pl-6 pr-2 lg:pr-3 relative">
-                  <div className="flex items-center w-full">
-                    {/* 3D Pillowy Cushion Circular Badge with Gentle Float */}
-                    <Float duration={4.8} distance={6}>
-                      <div className="relative w-16 h-16 sm:w-[68px] sm:h-[68px] xl:w-[72px] xl:h-[72px] flex items-center justify-center shrink-0">
-                        <div className="absolute inset-0 rounded-full bg-[#635BFF]/18 blur-[9px] pointer-events-none scale-110" />
-                        <div className="relative w-full h-full rounded-full bg-gradient-to-b from-white via-[#F3EFFF] to-[#DDD3FE] border border-white shadow-[inset_0_2.5px_4px_rgba(255,255,255,1),inset_0_-2.5px_4px_rgba(109,40,217,0.12),0_6px_18px_rgba(99,91,255,0.16)] flex items-center justify-center">
-                          <ProcessCodeIcon className="w-8 h-8 sm:w-[34px] sm:h-[34px] text-[#635BFF]" />
+                <StaggerItem direction="up" className="flex flex-col lg:pl-5 xl:pl-6 pr-0 lg:pr-3 relative">
+                  <div className="flex items-start gap-4 lg:flex-col lg:gap-0">
+                    <div className="flex flex-col items-center shrink-0">
+                      {/* 3D Pillowy Cushion Circular Badge with Gentle Float */}
+                      <Float duration={4.8} distance={6}>
+                        <div className="relative w-13 h-13 sm:w-[68px] sm:h-[68px] xl:w-[72px] xl:h-[72px] flex items-center justify-center shrink-0">
+                          <div className="absolute inset-0 rounded-full bg-[#635BFF]/18 blur-[9px] pointer-events-none scale-110" />
+                          <div className="relative w-full h-full rounded-full bg-gradient-to-b from-white via-[#F3EFFF] to-[#DDD3FE] border border-white shadow-[inset_0_2px_3px_rgba(255,255,255,1),inset_0_-2px_3px_rgba(109,40,217,0.12),0_6px_18px_rgba(99,91,255,0.16)] flex items-center justify-center">
+                            <ProcessCodeIcon className="w-6 h-6 sm:w-[34px] sm:h-[34px] text-[#635BFF]" />
+                          </div>
                         </div>
-                      </div>
-                    </Float>
-                    {/* Dotted Arrow to Step 4 */}
+                      </Float>
+                      {/* Mobile Vertical Connector Line */}
+                      <div className="w-0.5 h-10 bg-indigo-100 mt-2 rounded-full lg:hidden" />
+                    </div>
+
+                    {/* Desktop Dotted Arrow to Step 4 */}
                     <div className="hidden lg:flex flex-1 items-center px-2 sm:px-3">
                       <svg className="w-full h-3.5" viewBox="0 0 100 12" fill="none" preserveAspectRatio="none">
                         <line x1="0" y1="6" x2="86" y2="6" stroke="#94A3B8" strokeWidth="1.6" strokeDasharray="4 4" />
                         <path d="M82 2L88 6L82 10" stroke="#94A3B8" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </div>
-                  </div>
-                  {/* Step Text with Vertical Divider Line */}
-                  <div className="mt-6 sm:mt-7 relative">
-                    <div className="hidden lg:block absolute -left-5 xl:-left-6 top-1 bottom-1 w-px bg-slate-200" />
-                    <span className="text-sm sm:text-base font-black text-slate-900 block tracking-tight">03</span>
-                    <h3 className="font-extrabold text-slate-950 text-base sm:text-[18px] xl:text-[19px] tracking-tight mt-1.5">Build</h3>
-                    <p className="text-slate-500 text-[13px] sm:text-[13.5px] xl:text-[14px] leading-relaxed mt-2 font-normal max-w-[190px]">
-                      Develop, integrate and test.
-                    </p>
+
+                    {/* Step Text with Vertical Divider Line */}
+                    <div className="pt-0.5 lg:pt-0 lg:mt-6 sm:lg:mt-7 relative">
+                      <div className="hidden lg:block absolute -left-5 xl:-left-6 top-1 bottom-1 w-px bg-slate-200" />
+                      <span className="text-xs sm:text-base font-black text-[#635BFF] lg:text-slate-900 block tracking-tight">03</span>
+                      <h3 className="font-extrabold text-slate-950 text-base sm:text-[18px] xl:text-[19px] tracking-tight mt-0.5 sm:mt-1.5">Build</h3>
+                      <p className="text-slate-500 text-xs sm:text-[13.5px] xl:text-[14px] leading-relaxed mt-1 sm:mt-2 font-normal max-w-[240px]">
+                        Develop, integrate and test.
+                      </p>
+                    </div>
                   </div>
                 </StaggerItem>
 
                 {/* Step 04 */}
                 <StaggerItem direction="up" className="flex flex-col lg:pl-5 xl:pl-6 relative">
-                  <div className="flex items-center w-full">
-                    {/* 3D Pillowy Cushion Circular Badge with Gentle Float */}
-                    <Float duration={5.4} distance={6}>
-                      <div className="relative w-16 h-16 sm:w-[68px] sm:h-[68px] xl:w-[72px] xl:h-[72px] flex items-center justify-center shrink-0">
-                        <div className="absolute inset-0 rounded-full bg-[#635BFF]/18 blur-[9px] pointer-events-none scale-110" />
-                        <div className="relative w-full h-full rounded-full bg-gradient-to-b from-white via-[#F3EFFF] to-[#DDD3FE] border border-white shadow-[inset_0_2.5px_4px_rgba(255,255,255,1),inset_0_-2.5px_4px_rgba(109,40,217,0.12),0_6px_18px_rgba(99,91,255,0.16)] flex items-center justify-center">
-                          <ProcessRocketIcon className="w-8 h-8 sm:w-[34px] sm:h-[34px] text-[#635BFF]" />
+                  <div className="flex items-start gap-4 lg:flex-col lg:gap-0">
+                    <div className="flex flex-col items-center shrink-0">
+                      {/* 3D Pillowy Cushion Circular Badge with Gentle Float */}
+                      <Float duration={5.4} distance={6}>
+                        <div className="relative w-13 h-13 sm:w-[68px] sm:h-[68px] xl:w-[72px] xl:h-[72px] flex items-center justify-center shrink-0">
+                          <div className="absolute inset-0 rounded-full bg-[#635BFF]/18 blur-[9px] pointer-events-none scale-110" />
+                          <div className="relative w-full h-full rounded-full bg-gradient-to-b from-white via-[#F3EFFF] to-[#DDD3FE] border border-white shadow-[inset_0_2px_3px_rgba(255,255,255,1),inset_0_-2px_3px_rgba(109,40,217,0.12),0_6px_18px_rgba(99,91,255,0.16)] flex items-center justify-center">
+                            <ProcessRocketIcon className="w-8 h-8 sm:w-[34px] sm:h-[34px] text-[#635BFF]" />
+                          </div>
                         </div>
-                      </div>
-                    </Float>
-                  </div>
-                  {/* Step Text with Vertical Divider Line */}
-                  <div className="mt-6 sm:mt-7 relative">
-                    <div className="hidden lg:block absolute -left-5 xl:-left-6 top-1 bottom-1 w-px bg-slate-200" />
-                    <span className="text-sm sm:text-base font-black text-slate-900 block tracking-tight">04</span>
-                    <h3 className="font-extrabold text-slate-950 text-base sm:text-[18px] xl:text-[19px] tracking-tight mt-1.5">Launch</h3>
-                    <p className="text-slate-500 text-[13px] sm:text-[13.5px] xl:text-[14px] leading-relaxed mt-2 font-normal max-w-[190px]">
-                      Deploy and optimize for real results.
-                    </p>
+                      </Float>
+                    </div>
+
+                    {/* Step Text with Vertical Divider Line */}
+                    <div className="pt-0.5 lg:pt-0 lg:mt-6 sm:lg:mt-7 relative">
+                      <div className="hidden lg:block absolute -left-5 xl:-left-6 top-1 bottom-1 w-px bg-slate-200" />
+                      <span className="text-xs sm:text-base font-black text-[#635BFF] lg:text-slate-900 block tracking-tight">04</span>
+                      <h3 className="font-extrabold text-slate-950 text-base sm:text-[18px] xl:text-[19px] tracking-tight mt-0.5 sm:mt-1.5">Launch</h3>
+                      <p className="text-slate-500 text-xs sm:text-[13.5px] xl:text-[14px] leading-relaxed mt-1 sm:mt-2 font-normal max-w-[240px]">
+                        Deploy and optimize for real results.
+                      </p>
+                    </div>
                   </div>
                 </StaggerItem>
               </StaggerContainer>
