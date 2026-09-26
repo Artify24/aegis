@@ -55,7 +55,8 @@ export interface ServiceCardData {
     label: string;
     type: "popular" | "roi" | "custom" | "enterprise" | "industry";
   };
-  category: "Support & Sales" | "Operations & Workflow" | "Finance & Compliance" | "Industry Solutions" | "Intelligence & Data";
+  subTags?: string[];
+  category: "Conversational AI & Chatbots" | "Workflow & Automation" | "Document Intelligence" | "Analytics & Custom AI" | "Industry Solutions";
   iconType: string;
   watermark: "bubbles" | "flowchart" | "cube" | "chain" | "chart" | "compass" | "cards" | "plug" | "doc" | "truck" | "shield" | "cart" | "phone";
   deepDetails?: {
@@ -66,16 +67,18 @@ export interface ServiceCardData {
 }
 
 export const SERVICES_DATA: ServiceCardData[] = [
+  // ==================== 1. CONVERSATIONAL AI & CHATBOTS ====================
   // 01
   {
     id: 1,
     number: "01",
-    title: "AI Chatbots & Assistants",
-    description: "Custom AI assistants for customer support, internal ops and lead generation.",
+    title: "AI Chatbots & Customer Support Assistants",
+    description: "24/7 intelligent customer support, ticket resolution and multilingual helpdesk assistants across WhatsApp and web.",
+    subTags: ["24/7 Support", "WhatsApp & Web", "Ticket Deflection"],
     bullets: [
-      "24/7 customer support",
-      "Reduce support costs by up to 70%",
-      "Improve customer satisfaction (CSAT)",
+      "24/7 instant resolution with grounded business knowledge",
+      "Seamless human handoff & CRM ticket escalation",
+      "Up to 70% support cost reduction & higher CSAT",
     ],
     metrics: [
       { value: "70%", label: "Cost Reduction" },
@@ -83,12 +86,12 @@ export const SERVICES_DATA: ServiceCardData[] = [
       { value: "+40%", label: "CSAT Increase" },
     ],
     badge: { label: "Popular Solution", type: "popular" },
-    category: "Support & Sales",
+    category: "Conversational AI & Chatbots",
     iconType: "chat",
     watermark: "bubbles",
     deepDetails: {
-      overview: "Automates customer queries across WhatsApp, web, and internal channels with human-level accuracy and grounded ERP knowledge.",
-      deliverables: ["Custom WhatsApp & Web Chatbot", "CRM Integration & Escalation Flow", "Analytics Dashboard & CSAT Tracking"],
+      overview: "Deploys custom AI agents across WhatsApp, website widgets, and internal support channels that resolve repetitive tier-1 & tier-2 queries with human-level empathy and exact database grounding.",
+      deliverables: ["Custom WhatsApp & Web Chatbot", "Zendesk/Freshdesk/HubSpot Ticketing Integration", "Real-Time CSAT & Analytics Dashboard"],
       typicalTimeline: "2 to 3 weeks",
     },
   },
@@ -96,12 +99,96 @@ export const SERVICES_DATA: ServiceCardData[] = [
   {
     id: 2,
     number: "02",
-    title: "Process Automation",
-    description: "Automate repetitive work and streamline workflows across your tools.",
+    title: "AI Sales, In-Chat Commerce & Booking Agents",
+    description: "Conversational agents that instantly qualify ad leads, take direct orders in chat, recover abandoned carts and schedule calls.",
+    subTags: ["Lead Qualification", "WhatsApp Commerce", "Calendar Booking"],
     bullets: [
-      "Eliminate manual work",
-      "Improve accuracy & compliance",
-      "Integrate with your existing systems",
+      "Sub-60s instant lead response & budget intent scoring",
+      "In-chat catalog browsing, ordering, and cart recovery",
+      "2-way automated calendar scheduling with sales reps",
+    ],
+    metrics: [
+      { value: "3.5h → 52s", label: "Response Speed" },
+      { value: "+31%", label: "Cart Recovery" },
+      { value: "28x", label: "Campaign ROI", highlight: true },
+    ],
+    badge: { label: "High ROI", type: "roi" },
+    category: "Conversational AI & Chatbots",
+    iconType: "cart",
+    watermark: "cards",
+    deepDetails: {
+      overview: "Combines fast conversational sales, automated qualification, WhatsApp product ordering, and calendar booking into a single high-conversion sales engine that converts traffic into paying clients 24/7.",
+      deliverables: ["WhatsApp & Web Lead Qualification Engine", "In-Chat Catalog, Cart & Stripe/Razorpay Checkout", "Google Calendar & Outlook 2-Way Sync"],
+      typicalTimeline: "2 to 4 weeks",
+    },
+  },
+  // 03
+  {
+    id: 3,
+    number: "03",
+    title: "AI Voice Agents & Autonomous Receptionists",
+    description: "Ultra-realistic conversational voice bots for inbound call handling, appointment scheduling, and caller qualification.",
+    subTags: ["Voice AI", "Phone Receptionist", "Inbound & Outbound"],
+    bullets: [
+      "Sub-second voice latency with natural speech cadence",
+      "Automated call screening, FAQs & emergency routing",
+      "Integrates directly with your telephony (Twilio, VoIP, PBX)",
+    ],
+    metrics: [
+      { value: "<600ms", label: "Voice Latency" },
+      { value: "-70%", label: "Call Center Cost" },
+      { value: "99.2%", label: "Call Answer Rate", highlight: true },
+    ],
+    badge: { label: "Voice AI", type: "custom" },
+    category: "Conversational AI & Chatbots",
+    iconType: "phone",
+    watermark: "phone",
+    deepDetails: {
+      overview: "Custom voice agents that answer inbound calls instantly, qualify caller intent, answer complex FAQs, and book appointments or warm-transfer high-priority callers to human staff.",
+      deliverables: ["Custom Telephony & VoIP Integration", "Natural Speech Synthesis & Grounded Knowledge", "Call Recordings, Transcriptions & CRM Sync"],
+      typicalTimeline: "3 to 4 weeks",
+    },
+  },
+  // 04
+  {
+    id: 4,
+    number: "04",
+    title: "Enterprise RAG Knowledge Assistant",
+    description: "Private ChatGPT over your company documents, Notion, Google Drive, manuals, and internal databases with strict permissions.",
+    subTags: ["Private RAG", "Company Wiki", "Role-Based Access"],
+    bullets: [
+      "Zero data leakage with enterprise-grade data isolation",
+      "Instant citation & page-reference verification",
+      "Drastically speeds up internal team onboarding and research",
+    ],
+    metrics: [
+      { value: "100%", label: "Private Data" },
+      { value: "8.5h → 15m", label: "Search Time" },
+      { value: "99.4%", label: "Citation Accuracy", highlight: true },
+    ],
+    badge: { label: "Enterprise Security", type: "enterprise" },
+    category: "Conversational AI & Chatbots",
+    iconType: "database",
+    watermark: "doc",
+    deepDetails: {
+      overview: "Builds a grounded, hallucination-resistant knowledge base across your company's scattered files, spreadsheets, and SOPs, allowing employees to query company intelligence securely.",
+      deliverables: ["Secure Vector Database & Hybrid Search", "Granular Role-Based Access Control (RBAC)", "Slack & Microsoft Teams Embedded Bots"],
+      typicalTimeline: "3 to 5 weeks",
+    },
+  },
+
+  // ==================== 2. WORKFLOW & AUTOMATION ====================
+  // 05
+  {
+    id: 5,
+    number: "05",
+    title: "Intelligent Process Automation (IPA)",
+    description: "Automate repetitive data-entry, approvals, cross-tool handoffs and routine operations across your stack.",
+    subTags: ["Workflow Automation", "Zero Manual Entry", "Error-Proof"],
+    bullets: [
+      "Connects disparate cloud apps and legacy systems",
+      "Automated validation, routing, and exception alerting",
+      "Eliminates 80%+ of repetitive administrative work",
     ],
     metrics: [
       { value: "60%", label: "Time Saved" },
@@ -109,7 +196,7 @@ export const SERVICES_DATA: ServiceCardData[] = [
       { value: "3–6", label: "Months ROI" },
     ],
     badge: { label: "High ROI", type: "roi" },
-    category: "Operations & Workflow",
+    category: "Workflow & Automation",
     iconType: "gear",
     watermark: "flowchart",
     deepDetails: {
@@ -118,42 +205,17 @@ export const SERVICES_DATA: ServiceCardData[] = [
       typicalTimeline: "2 to 4 weeks",
     },
   },
-  // 03
+  // 06
   {
-    id: 3,
-    number: "03",
-    title: "Custom AI Solutions",
-    description: "Tailored AI systems built for your unique business challenges.",
+    id: 6,
+    number: "06",
+    title: "System Integrations & Custom API Connectors",
+    description: "Connect your fragmented CRM, ERP, billing and operational tools for real-time bi-directional data flow.",
+    subTags: ["API Pipelines", "Two-Way Sync", "Custom Webhooks"],
     bullets: [
-      "Domain-specific AI models",
-      "End-to-end implementation",
-      "Ongoing support & optimization",
-    ],
-    metrics: [
-      { value: "2–10x", label: "Productivity Gain" },
-      { value: "30–50%", label: "Cost Reduction" },
-      { value: "3–6", label: "Months ROI" },
-    ],
-    badge: { label: "Custom Build", type: "custom" },
-    category: "Intelligence & Data",
-    iconType: "cube",
-    watermark: "cube",
-    deepDetails: {
-      overview: "Bespoke AI architectures tailored to unique proprietary data, compliance requirements, and specialized enterprise processes.",
-      deliverables: ["Fine-Tuned LLM Models", "Secure RAG Infrastructure", "Production SLA & Monitoring"],
-      typicalTimeline: "4 to 8 weeks",
-    },
-  },
-  // 04
-  {
-    id: 4,
-    number: "04",
-    title: "Integrations & APIs",
-    description: "Connect your tools and data for a seamless ecosystem.",
-    bullets: [
-      "API development & integrations",
-      "Sync data across platforms",
-      "Custom connectors (CRM, ERP, etc.)",
+      "Custom REST, GraphQL and webhook event pipelines",
+      "Real-time two-way synchronization with zero data loss",
+      "Replaces fragile spreadsheets and manual exports",
     ],
     metrics: [
       { value: "50%", label: "Less Manual Work" },
@@ -161,7 +223,7 @@ export const SERVICES_DATA: ServiceCardData[] = [
       { value: "2–4", label: "Months ROI" },
     ],
     badge: { label: "Essential", type: "custom" },
-    category: "Operations & Workflow",
+    category: "Workflow & Automation",
     iconType: "link",
     watermark: "chain",
     deepDetails: {
@@ -170,50 +232,164 @@ export const SERVICES_DATA: ServiceCardData[] = [
       typicalTimeline: "2 to 4 weeks",
     },
   },
-  // 05
+  // 07
   {
-    id: 5,
-    number: "05",
-    title: "Analytics & Insights",
-    description: "Turn your data into actionable insights with AI-powered analytics.",
+    id: 7,
+    number: "07",
+    title: "Autonomous Multi-Agent Systems & Workforce",
+    description: "Deploy multi-agent teams that collaborate to automate complex multi-step research, ops and reporting tasks.",
+    subTags: ["Multi-Agent AI", "Autonomous Ops", "Executive Reporting"],
     bullets: [
-      "Real-time dashboards",
-      "Predictive analytics",
-      "Business intelligence reports",
+      "Autonomous agents dividing complex tasks into subtasks",
+      "Zero-touch CRM data cleansing, enrichment and scoring",
+      "Automated executive briefings and weekly slide generation",
     ],
     metrics: [
-      { value: "2–5x", label: "Faster Decision Making" },
-      { value: "40%", label: "Revenue Growth" },
-      { value: "3–6", label: "Months ROI" },
+      { value: "20 → 2 hrs", label: "Task Time / Wk" },
+      { value: "3h → 0", label: "Reporting Hours" },
+      { value: "7,450%", label: "Measured ROI", highlight: true },
+    ],
+    badge: { label: "Next-Gen AI", type: "enterprise" },
+    category: "Workflow & Automation",
+    iconType: "layers",
+    watermark: "cards",
+    deepDetails: {
+      overview: "Orchestrates multiple autonomous AI agents that collaborate on complex tasks, verifying each other's outputs, enriching CRM records, and delivering ready-to-present management summaries.",
+      deliverables: ["Autonomous Multi-Agent Swarm Framework", "Task Routing & Verification Protocol", "Automated Weekly Executive Briefings"],
+      typicalTimeline: "3 to 6 weeks",
+    },
+  },
+
+  // ==================== 3. DOCUMENT INTELLIGENCE ====================
+  // 08
+  {
+    id: 8,
+    number: "08",
+    title: "AI Document Extraction & Accounts Payable",
+    description: "Extracts structured line-item data from invoices, POs, bank statements and forms directly into your ERP.",
+    subTags: ["Invoices & POs", "OCR & Line Items", "ERP Ingestion"],
+    bullets: [
+      "Precision OCR across printed, scanned and handwritten PDFs",
+      "Automated 3-way matching (PO vs. Invoice vs. Receipt)",
+      "Direct ingestion into Tally, SAP, QuickBooks and NetSuite",
+    ],
+    metrics: [
+      { value: "~90s", label: "Per Document" },
+      { value: "-85%", label: "AP Processing Cost" },
+      { value: "99.2%", label: "Extraction Accuracy", highlight: true },
+    ],
+    badge: { label: "High ROI", type: "roi" },
+    category: "Document Intelligence",
+    iconType: "fileText",
+    watermark: "doc",
+    deepDetails: {
+      overview: "Automates end-to-end accounts payable and document ingestion. Extracts vendor data, totals, taxes, and line-items from email attachments and synchronizes directly with accounting systems.",
+      deliverables: ["Multi-Format OCR Extraction Pipeline", "Automated 3-Way Matching Logic", "ERP & Accounting System Sync"],
+      typicalTimeline: "2 to 4 weeks",
+    },
+  },
+  // 09
+  {
+    id: 9,
+    number: "09",
+    title: "RFP, Tender & Contract Intelligence",
+    description: "Parses 200+ page tenders, RFPs and contracts to extract compliance matrices, risks and draft bid proposals.",
+    subTags: ["Tender Intelligence", "RFP Parsing", "Risk Extraction"],
+    bullets: [
+      "Automated extraction of clauses, deadlines and deliverables",
+      "Instant compliance checklist and disqualifier flagging",
+      "First-draft technical response generation from past wins",
+    ],
+    metrics: [
+      { value: "1wk → 15m", label: "Analysis Time" },
+      { value: "+25%", label: "Bid Win Rate" },
+      { value: "98.7%", label: "Extraction Accuracy", highlight: true },
+    ],
+    badge: { label: "Enterprise", type: "enterprise" },
+    category: "Document Intelligence",
+    iconType: "gavel",
+    watermark: "doc",
+    deepDetails: {
+      overview: "Ingests massive government and enterprise RFPs, highlighting strict qualification criteria, submission deadlines, and generating compliance verification matrices in minutes.",
+      deliverables: ["RFP Ingestion & Compliance Matrix Generator", "Bid Risk & Disqualification Alert Engine", "Proposal Drafting Assistant"],
+      typicalTimeline: "3 to 5 weeks",
+    },
+  },
+
+  // ==================== 4. ANALYTICS & CUSTOM AI ====================
+  // 10
+  {
+    id: 10,
+    number: "10",
+    title: "Predictive Analytics & Executive BI",
+    description: "Converts raw customer interactions, revenue metrics and chat logs into predictive executive intelligence.",
+    subTags: ["Executive BI", "Sentiment Analysis", "Churn Prediction"],
+    bullets: [
+      "Real-time executive dashboards & automated morning summaries",
+      "Multi-channel sentiment analysis & early churn detection",
+      "Predictive revenue forecasting and anomaly alerts",
+    ],
+    metrics: [
+      { value: "2–5x", label: "Faster Decisions" },
+      { value: "+20%", label: "Sales Uplift" },
+      { value: "4.5+", label: "Avg CSAT Score", highlight: true },
     ],
     badge: { label: "Data-Driven", type: "roi" },
-    category: "Intelligence & Data",
+    category: "Analytics & Custom AI",
     iconType: "chart",
     watermark: "chart",
     deepDetails: {
-      overview: "Extracts data from multiple sales, accounting, and marketing tools to generate daily executive digests and predictive forecasts.",
+      overview: "Extracts data from multiple sales, accounting, and customer interaction channels to generate daily executive digests, sentiment alerts, and predictive business forecasts.",
       deliverables: ["Automated Executive Briefings", "Anomaly Detection Alerts", "Interactive BI Dashboards"],
       typicalTimeline: "3 to 5 weeks",
     },
   },
-  // 06
+  // 11
   {
-    id: 6,
-    number: "06",
-    title: "AI Consulting & Strategy",
-    description: "Get expert guidance to identify opportunities and implement AI effectively.",
+    id: 11,
+    number: "11",
+    title: "Custom Enterprise AI Models & Fine-Tuning",
+    description: "Bespoke AI architectures and domain-specific LLMs built for unique proprietary enterprise workflows.",
+    subTags: ["Custom LLMs", "Fine-Tuning", "Private Hosting"],
     bullets: [
-      "AI strategy & roadmap",
-      "Use case identification",
-      "Implementation support",
+      "Domain-specific model adaptation and fine-tuning",
+      "On-premise or sovereign private cloud deployment",
+      "End-to-end implementation with enterprise SLA",
     ],
     metrics: [
-      { value: "Clear", label: "Roadmap" },
-      { value: "Higher", label: "ROI Success Rate" },
-      { value: "Long-Term", label: "Growth" },
+      { value: "2–10x", label: "Productivity Gain" },
+      { value: "30–50%", label: "Cost Reduction" },
+      { value: "3–6", label: "Months ROI" },
+    ],
+    badge: { label: "Custom Build", type: "custom" },
+    category: "Analytics & Custom AI",
+    iconType: "cube",
+    watermark: "cube",
+    deepDetails: {
+      overview: "Bespoke AI architectures tailored to unique proprietary data, strict compliance mandates, and specialized industry vocabulary.",
+      deliverables: ["Fine-Tuned LLM Models", "Secure RAG Infrastructure", "Production SLA & Monitoring"],
+      typicalTimeline: "4 to 8 weeks",
+    },
+  },
+  // 12
+  {
+    id: 12,
+    number: "12",
+    title: "AI Consulting & Strategic Roadmap",
+    description: "Expert architectural audits to identify highest-ROI automation opportunities and design 90-day execution plans.",
+    subTags: ["AI Audit", "ROI Forecast", "90-Day Roadmap"],
+    bullets: [
+      "Comprehensive workflow audit & automation feasibility matrix",
+      "Projected ROI, cost breakdown and vendor tool evaluation",
+      "Phased rollout strategy with hands-on executive guidance",
+    ],
+    metrics: [
+      { value: "Clear", label: "90-Day Roadmap" },
+      { value: "Highest", label: "ROI Success" },
+      { value: "Long-Term", label: "Scalability" },
     ],
     badge: { label: "Strategic Partner", type: "enterprise" },
-    category: "Intelligence & Data",
+    category: "Analytics & Custom AI",
     iconType: "shield",
     watermark: "compass",
     deepDetails: {
@@ -222,488 +398,142 @@ export const SERVICES_DATA: ServiceCardData[] = [
       typicalTimeline: "1 to 2 weeks",
     },
   },
-  // 07
-  {
-    id: 7,
-    number: "07",
-    title: "AI Lead-Response & Qualification Agent",
-    description: "Instantly responds to ad/WhatsApp leads and qualifies high-intent prospects.",
-    bullets: [
-      "Instant response within 60 seconds",
-      "Intent qualification & budget scoring",
-      "Auto-scheduling for top sales reps",
-    ],
-    metrics: [
-      { value: "3.5h → 52s", label: "Response Speed" },
-      { value: "58% → 94%", label: "Qualified Leads" },
-      { value: "28x", label: "Campaign ROI", highlight: true },
-    ],
-    badge: { label: "High ROI", type: "roi" },
-    category: "Support & Sales",
-    iconType: "gear",
-    watermark: "cards",
-  },
-  // 08
-  {
-    id: 8,
-    number: "08",
-    title: "Admissions Enquiry-to-Enrolment Automation",
-    description: "Captures, follows up and nurtures education enquiries from first contact.",
-    bullets: [
-      "After-hours lead capture & replies",
-      "Personalized WhatsApp drip journeys",
-      "Document collection & checklist automation",
-    ],
-    metrics: [
-      { value: "18h → 2min", label: "Response Time" },
-      { value: "+40%", label: "Enrolment Lift" },
-      { value: "-30%", label: "Cost Per Student", highlight: true },
-    ],
-    badge: { label: "Education", type: "industry" },
-    category: "Industry Solutions",
-    iconType: "graduation",
-    watermark: "cube",
-  },
-  // 09
-  {
-    id: 9,
-    number: "09",
-    title: "Real-Estate Site-Visit & Pipeline Automation",
-    description: "Centralizes property leads and converts dormant leads into site visits.",
-    bullets: [
-      "Automated WhatsApp visit booking",
-      "Reactivates cold & dormant leads",
-      "Instant broker geo-routing",
-    ],
-    metrics: [
-      { value: "4.2x", label: "Visit Conversion" },
-      { value: "₹4,800", label: "CAC (from 22K)" },
-      { value: "₹2.1 Cr", label: "Closed Pipeline", highlight: true },
-    ],
-    badge: { label: "Real Estate", type: "industry" },
-    category: "Industry Solutions",
-    iconType: "building",
-    watermark: "plug",
-  },
-  // 10
-  {
-    id: 10,
-    number: "10",
-    title: "AI Commerce Agent — In-Chat Ordering",
-    description: "Handles product questions, buying assistance, in-chat checkout and cart recovery.",
-    bullets: [
-      "In-chat catalog browse & checkout",
-      "Automated cart recovery follow-ups",
-      "Dynamic upsells & order tracking",
-    ],
-    metrics: [
-      { value: "31%", label: "Cart Recovery" },
-      { value: "+24%", label: "Average Order Value" },
-      { value: "4.5x", label: "Campaign ROI", highlight: true },
-    ],
-    badge: { label: "High ROI", type: "roi" },
-    category: "Support & Sales",
-    iconType: "cart",
-    watermark: "chart",
-  },
-  // 11
-  {
-    id: 11,
-    number: "11",
-    title: "Restaurant Direct-Ordering & Loyalty Engine",
-    description: "Moves customers from aggregators to direct WhatsApp ordering with loyalty.",
-    bullets: [
-      "Direct ordering without commissions",
-      "Automated loyalty point rewards",
-      "WhatsApp win-back campaigns",
-    ],
-    metrics: [
-      { value: "2x", label: "Direct Orders" },
-      { value: "-63%", label: "Aggregator Fees" },
-      { value: "58%", label: "Repeat Rate", highlight: true },
-    ],
-    badge: { label: "F&B Loyalty", type: "industry" },
-    category: "Industry Solutions",
-    iconType: "store",
-    watermark: "compass",
-  },
-  // 12
-  {
-    id: 12,
-    number: "12",
-    title: "AI Booking & Appointment System",
-    description: "Automates appointment booking, reminders and missed-slot recovery.",
-    bullets: [
-      "Self-serve WhatsApp & web booking",
-      "Automated pre-visit reminders & prep",
-      "Missed-appointment recovery loops",
-    ],
-    metrics: [
-      { value: "40% → 12%", label: "No-Show Drop" },
-      { value: "-80%", label: "Reception Load" },
-      { value: "2,300+", label: "Month 1 Bookings", highlight: true },
-    ],
-    badge: { label: "Popular", type: "popular" },
-    category: "Industry Solutions",
-    iconType: "link",
-    watermark: "cards",
-  },
+
+  // ==================== 5. INDUSTRY SOLUTIONS ====================
   // 13
   {
     id: 13,
     number: "13",
-    title: "AI Voice Agent / AI Receptionist",
-    description: "Handles inbound/outbound calls, first-touch qualification and FAQs.",
+    title: "Real Estate & Property Pipeline Automation",
+    description: "Automates buyer qualification, WhatsApp property matching, virtual tours and site-visit scheduling.",
+    subTags: ["Real Estate", "Site-Visit Booking", "WhatsApp Pipeline"],
     bullets: [
-      "Human-grade conversational voice",
-      "Inbound call qualification & routing",
-      "Outbound reminders & call logs",
+      "Instant buyer budget & preference qualification via WhatsApp",
+      "Automated site-visit calendar coordination & broker routing",
+      "Re-engagement campaigns for stale property inquiries",
     ],
     metrics: [
-      { value: "88%", label: "No-Human Calls" },
-      { value: "-30%", label: "Handle Time" },
-      { value: "3.2x", label: "Team Capacity", highlight: true },
+      { value: "82%", label: "Site Visits Scheduled" },
+      { value: "4.8x", label: "Pipeline Velocity" },
+      { value: "₹1.2Cr+", label: "Attributed Deals", highlight: true },
     ],
-    badge: { label: "Voice AI", type: "popular" },
-    category: "Support & Sales",
-    iconType: "phone",
-    watermark: "bubbles",
+    badge: { label: "Industry Solution", type: "industry" },
+    category: "Industry Solutions",
+    iconType: "building",
+    watermark: "compass",
+    deepDetails: {
+      overview: "Connects real estate ad campaigns directly to WhatsApp bots that qualify buyer budgets, share brochures and floor plans, and book site-visits directly onto agents' calendars.",
+      deliverables: ["Real Estate Lead Qualification Bot", "Brochure & Floorplan Dispatch Flow", "Broker Calendar & Site-Visit Dispatch"],
+      typicalTimeline: "2 to 3 weeks",
+    },
   },
   // 14
   {
     id: 14,
     number: "14",
-    title: "AI Workforce — Event-Driven Lifecycle Ops",
-    description: "Triggers automated actions across signups, renewals, payments and referrals.",
+    title: "BFSI Collections & Loan Lifecycle Automation",
+    description: "Automates pre-due reminders, payment collection links, and compliant loan notification workflows.",
+    subTags: ["BFSI / FinTech", "Debt Collections", "Compliance"],
     bullets: [
-      "Zero-latency event trigger pipelines",
-      "Cross-system team task routing",
-      "Automated win-back & renewal flows",
+      "Conversational promise-to-pay capture via WhatsApp & SMS",
+      "Compliant, auditable regulatory communication logs",
+      "Up to 70% reduction in outbound dialer costs",
     ],
     metrics: [
-      { value: "275K", label: "Touchpoints/Month" },
-      { value: "1,000/day", label: "Tasks Routed" },
-      { value: "₹3.2L", label: "Recovered Cash", highlight: true },
+      { value: "85%", label: "Connectivity Rate" },
+      { value: "-70%", label: "Dialer Costs" },
+      { value: "-42%", label: "Overdue EMIs", highlight: true },
     ],
-    badge: { label: "High ROI", type: "roi" },
-    category: "Operations & Workflow",
-    iconType: "cpu",
-    watermark: "cube",
+    badge: { label: "BFSI", type: "enterprise" },
+    category: "Industry Solutions",
+    iconType: "bank",
+    watermark: "chart",
+    deepDetails: {
+      overview: "Automates pre-due and overdue payment collections with multi-channel payment link delivery and AI-driven conversational payment promises.",
+      deliverables: ["Omnichannel Payment Reminder Bot", "Promise-to-Pay Logging Engine", "Regulatory Compliance Audit Logs"],
+      typicalTimeline: "3 to 4 weeks",
+    },
   },
   // 15
   {
     id: 15,
     number: "15",
-    title: "AI Invoice & Accounts-Payable Automation",
-    description: "Extracts invoice data, validates it, reconciles GST/ERP info and routes approvals.",
+    title: "Education & Admissions Funnel Automation",
+    description: "Automates student inquiry-to-enrolment pipelines across web, social campaigns, and WhatsApp.",
+    subTags: ["EdTech / Higher Ed", "Admissions Funnel", "Auto-Followups"],
     bullets: [
-      "Intelligent OCR for PDFs & scans",
-      "Automated 3-way PO & GST matching",
-      "Manager exception routing",
+      "24/7 instant course inquiry counseling & fee FAQs",
+      "Automated document verification checklist follow-ups",
+      "Direct calendar booking with academic admissions counselors",
     ],
     metrics: [
-      { value: "88%", label: "Faster Processing" },
-      { value: "4% → 0.2%", label: "Error Rate" },
-      { value: "400%", label: "Approval Speed", highlight: true },
+      { value: "64%", label: "Enrollment Lift" },
+      { value: "3.2x", label: "Faster Processing" },
+      { value: "-50%", label: "Drop-off Rate", highlight: true },
     ],
-    badge: { label: "Finance", type: "roi" },
-    category: "Finance & Compliance",
-    iconType: "receipt",
+    badge: { label: "Education", type: "industry" },
+    category: "Industry Solutions",
+    iconType: "graduation",
     watermark: "doc",
+    deepDetails: {
+      overview: "Drives prospective student inquiries from ads to completed application submissions with automated document collection and counselor booking.",
+      deliverables: ["Admissions Inquiry Counselor Bot", "Document Upload & Verification Flow", "Counselor Scheduling Integration"],
+      typicalTimeline: "2 to 3 weeks",
+    },
   },
   // 16
   {
     id: 16,
     number: "16",
-    title: "AI PO-to-Order & Order Management",
-    description: "Converts WhatsApp/email/Excel purchase orders into ERP-ready sales orders.",
+    title: "Supply Chain, Logistics & Field Service Dispatch",
+    description: "Automates dealer orders, shipment tracking, warranty visual OCR and field-technician dispatch.",
+    subTags: ["Supply Chain", "Distributor Orders", "Field Dispatch"],
     bullets: [
-      "Converts messy POs to structured data",
-      "Live inventory check & fill-rate view",
-      "Instant SAP, Tally & Zoho sync",
-    ],
-    metrics: [
-      { value: "-85%", label: "Manual Effort" },
-      { value: "250+ hrs", label: "Reclaimed/Month" },
-      { value: "₹650 Cr", label: "Supported Scale", highlight: true },
-    ],
-    badge: { label: "ERP Ready", type: "custom" },
-    category: "Operations & Workflow",
-    iconType: "fileText",
-    watermark: "cards",
-  },
-  // 17
-  {
-    id: 17,
-    number: "17",
-    title: "Logistics & Shipment Automation",
-    description: "Automates dispatch documentation, labels, tracking, POD and status alerts.",
-    bullets: [
-      "Automated dispatch docs & labels",
-      "Instant POD verification & alerts",
-      "Customer WhatsApp delivery notifications",
-    ],
-    metrics: [
-      { value: "50 → 80", label: "Daily Dispatches" },
-      { value: "24 hrs", label: "Saved / Week" },
-      { value: "3 Days", label: "Faster Payouts", highlight: true },
-    ],
-    badge: { label: "Logistics", type: "industry" },
-    category: "Operations & Workflow",
-    iconType: "truck",
-    watermark: "truck",
-  },
-  // 18
-  {
-    id: 18,
-    number: "18",
-    title: "AI HR & Recruitment Automation",
-    description: "Automates candidate screening, interview scheduling and onboarding flows.",
-    bullets: [
-      "AI resume qualification & ranking",
-      "Automated interview calendar booking",
-      "Digital document collection & offers",
-    ],
-    metrics: [
-      { value: "-52%", label: "Time-to-Hire" },
-      { value: "+60%", label: "HR Time Freed" },
-      { value: "100%", label: "Compliance Rate", highlight: true },
-    ],
-    badge: { label: "HR Tech", type: "custom" },
-    category: "Operations & Workflow",
-    iconType: "briefcase",
-    watermark: "compass",
-  },
-  // 19
-  {
-    id: 19,
-    number: "19",
-    title: "RAG Knowledge Assistant over Company Docs",
-    description: "Answers employee/customer questions using company documents and ERP knowledge.",
-    bullets: [
-      "Grounded answers strictly from internal PDFs",
-      "Role-based access & permissions",
-      "Hallucination-free source citations",
-    ],
-    metrics: [
-      { value: "80%+", label: "Accuracy Rate" },
-      { value: "25,000", label: "Queries Offloaded" },
-      { value: "+22%", label: "Lead Boost", highlight: true },
-    ],
-    badge: { label: "Popular", type: "popular" },
-    category: "Intelligence & Data",
-    iconType: "database",
-    watermark: "cube",
-  },
-  // 20
-  {
-    id: 20,
-    number: "20",
-    title: "BFSI Collections & Loan Lifecycle Automation",
-    description: "Automates pre-due reminders, collections outreach and compliant loan notifications.",
-    bullets: [
-      "Compliant WhatsApp & SMS payment links",
-      "AI conversational promise-to-pay capture",
-      "Auditable regulatory inspection logs",
-    ],
-    metrics: [
-      { value: "66% → 85%", label: "Connectivity" },
-      { value: "-70%", label: "Dialer Costs" },
-      { value: "-42%", label: "Overdue EMIs", highlight: true },
-    ],
-    badge: { label: "BFSI", type: "enterprise" },
-    category: "Finance & Compliance",
-    iconType: "bank",
-    watermark: "chart",
-  },
-  // 21
-  {
-    id: 21,
-    number: "21",
-    title: "CA & Professional Services Lifecycle Automation",
-    description: "Automates client onboarding, document collection, deadline alerts and fee collection.",
-    bullets: [
-      "Self-serve tax & audit checklist requests",
-      "WhatsApp deadline nudges & compliance alerts",
-      "Automated fee invoicing & payment tracking",
-    ],
-    metrics: [
-      { value: "+89%", label: "Client Capacity" },
-      { value: "+93%", label: "Revenue Lift" },
-      { value: "-82%", label: "Comm. Hours", highlight: true },
-    ],
-    badge: { label: "Professional", type: "industry" },
-    category: "Industry Solutions",
-    iconType: "calculator",
-    watermark: "doc",
-  },
-  // 22
-  {
-    id: 22,
-    number: "22",
-    title: "SaaS Multi-Agent Internal Ops & Intelligence",
-    description: "Uses multiple AI agents to automate lead qualification, onboarding and reporting.",
-    bullets: [
-      "Autonomous agents collaborating on tasks",
-      "Zero-touch CRM data cleansing & scoring",
-      "Automated executive weekly slide decks",
-    ],
-    metrics: [
-      { value: "20 → 2 hrs", label: "Qualify Time / Wk" },
-      { value: "3h → 0", label: "Reporting Hours" },
-      { value: "7,450%", label: "Measured ROI", highlight: true },
-    ],
-    badge: { label: "High ROI", type: "roi" },
-    category: "Support & Sales",
-    iconType: "layers",
-    watermark: "cards",
-  },
-  // 23
-  {
-    id: 23,
-    number: "23",
-    title: "Dealer & Distributor Network Automation",
-    description: "Automates distributor ordering, pricing queries, support tickets and field-sales.",
-    bullets: [
-      "WhatsApp live dealer catalog & ordering",
-      "Instant tiered discount & credit validation",
-      "Dispatch notification & shipment tracking",
+      "24/7 WhatsApp dealer ordering & tier-discount verification",
+      "Real-time GPS shipment tracking & delivery notifications",
+      "Visual OCR on warranty labels with auto-technician routing",
     ],
     metrics: [
       { value: "48h → <2h", label: "Order Processing" },
       { value: "80%", label: "Auto-Resolved" },
       { value: "₹50L+", label: "Annual Savings", highlight: true },
     ],
-    badge: { label: "B2B Scale", type: "industry" },
+    badge: { label: "Supply Chain", type: "industry" },
     category: "Industry Solutions",
-    iconType: "store",
-    watermark: "plug",
+    iconType: "truck",
+    watermark: "truck",
+    deepDetails: {
+      overview: "Streamlines B2B distributor re-orders, shipment visibility, and warranty claim handling through WhatsApp automation and smart geolocation technician dispatch.",
+      deliverables: ["Distributor Ordering Portal & WhatsApp Bot", "Live GPS Shipment Tracking Webhooks", "Warranty OCR & Field Dispatch Engine"],
+      typicalTimeline: "3 to 5 weeks",
+    },
   },
-  // 24
+  // 17
   {
-    id: 24,
-    number: "24",
-    title: "Warranty & Field-Service Dispatch Automation",
-    description: "Reads warranty info from product photos, checks coverage and dispatches technicians.",
-    bullets: [
-      "Visual OCR reads serial & warranty labels",
-      "Automated warranty database entitlement",
-      "Smart geolocation technician dispatch",
-    ],
-    metrics: [
-      { value: "4d → 2d", label: "Turnaround" },
-      { value: "<90s", label: "Response Speed" },
-      { value: "+17%", label: "CSAT Improvement", highlight: true },
-    ],
-    badge: { label: "Field Service", type: "custom" },
-    category: "Operations & Workflow",
-    iconType: "wrench",
-    watermark: "compass",
-  },
-  // 25
-  {
-    id: 25,
-    number: "25",
-    title: "Content Operations & AI UGC Production",
-    description: "Automates content ideation, drafting, UGC creation and multi-platform distribution.",
-    bullets: [
-      "AI script & video creative generation",
-      "Multi-platform scheduled auto-publishing",
-      "Creative performance iteration analytics",
-    ],
-    metrics: [
-      { value: "1.4x → 3.2x", label: "Ad ROAS" },
-      { value: "-40%", label: "Production Cost" },
-      { value: "130 Posts", label: "In 2 Hours", highlight: true },
-    ],
-    badge: { label: "Popular", type: "popular" },
-    category: "Intelligence & Data",
-    iconType: "video",
-    watermark: "cube",
-  },
-  // 26
-  {
-    id: 26,
-    number: "26",
-    title: "Government Tender & Bid Intelligence",
-    description: "Reads large tender documents, extracts requirements and accelerates bid preparation.",
-    bullets: [
-      "Instant 200+ page RFP document parsing",
-      "Automated compliance checklist generation",
-      "Technical proposal response drafting",
-    ],
-    metrics: [
-      { value: "1wk → 15m", label: "Doc Analysis" },
-      { value: "+25%", label: "Bid Win Rate" },
-      { value: "98.7%", label: "Extraction Acc.", highlight: true },
-    ],
-    badge: { label: "Enterprise", type: "enterprise" },
-    category: "Intelligence & Data",
-    iconType: "gavel",
-    watermark: "doc",
-  },
-  // 27
-  {
-    id: 27,
-    number: "27",
+    id: 17,
+    number: "17",
     title: "Brand Protection & Marketplace Monitoring",
-    description: "Monitors marketplace listings, unauthorized sellers, MAP violations and counterfeiters.",
+    description: "Monitors e-commerce listings 24/7 to detect unauthorized sellers, counterfeiters and MAP pricing violations.",
+    subTags: ["E-Commerce", "Brand Protection", "MAP Pricing"],
     bullets: [
-      "24/7 scraping of Amazon, Flipkart & quick-comm",
-      "Immediate MAP price drop violation alerts",
-      "Creator authenticity & audience verification",
+      "Automated scraping across Amazon, Flipkart, Blinkit & Zepto",
+      "Instant MAP price-drop and rogue reseller alerts",
+      "Automated takedown notices and evidence archival",
     ],
     metrics: [
       { value: "400+", label: "SKUs Monitored" },
-      { value: "24/7", label: "Live Protection" },
-      { value: "-60%", label: "Wasted Creator Spend", highlight: true },
+      { value: "24/7", label: "Live Detection" },
+      { value: "-60%", label: "Margin Leakage", highlight: true },
     ],
-    badge: { label: "Security", type: "enterprise" },
-    category: "Intelligence & Data",
+    badge: { label: "Brand Security", type: "enterprise" },
+    category: "Industry Solutions",
     iconType: "shieldCheck",
     watermark: "shield",
-  },
-  // 28
-  {
-    id: 28,
-    number: "28",
-    title: "AI Document Processing & Data Extraction",
-    description: "Extracts structured data from PDFs, images and handwritten documents into systems.",
-    bullets: [
-      "Handwritten and multi-table OCR precision",
-      "Validates extracted data against rules",
-      "Direct API ingestion into databases & ERP",
-    ],
-    metrics: [
-      { value: "~90s", label: "Per Document" },
-      { value: "-50%", label: "Ordering Time" },
-      { value: "250 Pgs", label: "<25min Ingest", highlight: true },
-    ],
-    badge: { label: "Core AI", type: "custom" },
-    category: "Finance & Compliance",
-    iconType: "fileText",
-    watermark: "doc",
-  },
-  // 29
-  {
-    id: 29,
-    number: "29",
-    title: "AI Customer Feedback & Sentiment Analysis",
-    description: "Analyzes support, complaints and conversations to identify sentiment and intent.",
-    bullets: [
-      "Real-time sentiment categorization across chats",
-      "Early defect & dissatisfaction detection",
-      "Automated priority escalation to executives",
-    ],
-    metrics: [
-      { value: "80%", label: "Auto-Resolved" },
-      { value: "4.5+", label: "CSAT Score" },
-      { value: "+20%", label: "Sales Uplift", highlight: true },
-    ],
-    badge: { label: "Popular", type: "popular" },
-    category: "Intelligence & Data",
-    iconType: "heartHandshake",
-    watermark: "bubbles",
+    deepDetails: {
+      overview: "24/7 crawler monitoring unauthorized third-party listings, MAP pricing breaches, and counterfeit products across major online marketplaces.",
+      deliverables: ["24/7 Marketplace Scraping & Alert Bot", "MAP Compliance Violation Reports", "Automated Takedown Evidence Package"],
+      typicalTimeline: "2 to 3 weeks",
+    },
   },
 ];
 
@@ -1253,26 +1083,26 @@ function CategoryBadge({ label }: { label: string; type?: string }) {
 }
 
 export default function ServicesCatalog() {
-  const [activeCategory, setActiveCategory] = useState<string>("All Services (29)");
+  const [activeCategory, setActiveCategory] = useState<string>("All Services (17)");
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [viewMode, setViewMode] = useState<"paginated" | "all">("paginated");
   const [selectedService, setSelectedService] = useState<ServiceCardData | null>(null);
 
   const categories = [
-    "All Services (29)",
-    "Support & Sales",
-    "Operations & Workflow",
-    "Finance & Compliance",
+    "All Services (17)",
+    "Conversational AI & Chatbots",
+    "Workflow & Automation",
+    "Document Intelligence",
+    "Analytics & Custom AI",
     "Industry Solutions",
-    "Intelligence & Data",
   ];
 
   // Filter logic
   const filteredServices = useMemo(() => {
     return SERVICES_DATA.filter((svc) => {
       const matchCategory =
-        activeCategory === "All Services (29)" ||
+        activeCategory === "All Services (17)" ||
         svc.category === activeCategory;
 
       const query = searchQuery.toLowerCase().trim();
@@ -1398,7 +1228,7 @@ export default function ServicesCatalog() {
             <button
               type="button"
               onClick={() => {
-                setActiveCategory("All Services (29)");
+                setActiveCategory("All Services (17)");
                 setSearchQuery("");
               }}
               className="mt-4 inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs font-bold text-white bg-[#635BFF]"
@@ -1417,12 +1247,12 @@ export default function ServicesCatalog() {
                   transition={{ duration: 0.25, ease: TRANSITION_EASE }}
                   key={service.id}
                   onClick={() => setSelectedService(service)}
-                  className="relative rounded-[24px] sm:rounded-[28px] bg-white border border-slate-200/80 p-5 sm:p-6 flex flex-col justify-between overflow-hidden shadow-[0_10px_30px_rgba(99,91,255,0.06),0_2px_6px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_45px_rgba(99,91,255,0.16),0_6px_16px_rgba(0,0,0,0.04)] hover:border-[#635BFF]/50 hover:-translate-y-1.5 transition-all duration-200 group cursor-pointer"
+                  className="relative rounded-[24px] sm:rounded-[28px] bg-white border border-slate-200/80 p-5 sm:p-6 flex flex-col justify-between overflow-hidden shadow-[0_10px_30px_rgba(99,91,255,0.06),0_2px_6px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_45px_rgba(99,91,255,0.16),0_6px_16px_rgba(0,0,0,0.04)] hover:border-[#635BFF]/50 hover:-translate-y-1.5 transition-all duration-200 group cursor-pointer h-full"
                 >
                 {/* Top Section */}
-                <div>
-                  {/* Top Row: 3D Squircle Icon on Left, Number on Right (Exact media_1789895085564.jpg layout) */}
-                  <div className="flex items-start justify-between gap-4">
+                <div className="flex-1 flex flex-col">
+                  {/* Top Row: 3D Squircle Icon on Left, Number on Right */}
+                  <div className="flex items-center justify-between gap-4 h-11 sm:h-12 shrink-0">
                     {/* 3D Pillowy Cushion Squircle Badge */}
                     <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-b from-[#FAF8FF] via-[#F2EEFF] to-[#E5DDFF] border border-[#ECE5FE] shadow-[inset_0_2px_4px_rgba(255,255,255,0.95),inset_0_-2px_4px_rgba(94,82,240,0.12),0_4px_14px_rgba(94,82,240,0.12)] flex items-center justify-center shrink-0">
                       <ServiceIcon type={service.iconType} />
@@ -1435,21 +1265,39 @@ export default function ServicesCatalog() {
                   </div>
 
                   {/* Middle Layout: Text on Left, 3D Glass Artwork on Right */}
-                  <div className="flex items-start justify-between gap-2.5 sm:gap-3 mt-3 sm:mt-3.5">
+                  <div className="flex items-start justify-between gap-2.5 sm:gap-3 mt-3 sm:mt-3.5 flex-1">
                     {/* Left Text Block */}
-                    <div className="flex-1 min-w-0 pr-0.5">
-                      {/* Title */}
-                      <h3 className="text-[18.5px] sm:text-[20px] font-extrabold text-slate-900 tracking-tight leading-snug group-hover:text-[#5E52F0] transition-colors">
-                        {service.title}
-                      </h3>
+                    <div className="flex-1 min-w-0 pr-0.5 flex flex-col">
+                      {/* Title - Consistent Baseline Height */}
+                      <div className="min-h-[50px] sm:min-h-[54px] flex items-center">
+                        <h3 className="text-[17.5px] sm:text-[19px] font-extrabold text-slate-900 tracking-tight leading-snug group-hover:text-[#5E52F0] transition-colors [text-wrap:balance] break-normal [hyphens:none]">
+                          {service.title}
+                        </h3>
+                      </div>
 
-                      {/* Description */}
-                      <p className="text-slate-500 text-[12.5px] sm:text-[13px] leading-relaxed mt-1 font-normal line-clamp-2">
+                      {/* Grouped Capability Pills - Consistent Baseline Height */}
+                      <div className="min-h-[26px] sm:min-h-[28px] flex items-center mt-2 mb-1.5">
+                        {service.subTags && service.subTags.length > 0 && (
+                          <div className="flex flex-wrap gap-1 sm:gap-1.5">
+                            {service.subTags.map((tag, idx) => (
+                              <span
+                                key={idx}
+                                className="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] sm:text-[10.5px] font-bold bg-[#F4F1FD] text-[#635BFF] border border-[#E4DCFC] whitespace-nowrap"
+                              >
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Description - Consistent Baseline Height */}
+                      <p className="text-slate-500 text-[12.5px] sm:text-[13px] leading-relaxed font-normal line-clamp-2 min-h-[38px] sm:min-h-[40px] break-normal [hyphens:none]">
                         {service.description}
                       </p>
 
-                      {/* 3 Feature Bullets with Purple Checkmarks */}
-                      <div className="mt-2.5 sm:mt-3 space-y-1.5 sm:space-y-2">
+                      {/* 3 Feature Bullets - Consistent Baseline Height */}
+                      <div className="mt-3 space-y-2 min-h-[88px] sm:min-h-[92px] flex flex-col justify-start">
                         {service.bullets.map((bullet, idx) => (
                           <div key={idx} className="flex items-start gap-2 text-[12px] sm:text-[12.5px] font-medium text-slate-700">
                             <span className="w-4 h-4 rounded-full bg-[#5E52F0] text-white flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
@@ -1457,45 +1305,62 @@ export default function ServicesCatalog() {
                                 <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                               </svg>
                             </span>
-                            <span className="leading-snug">{bullet}</span>
+                            <span className="leading-snug break-normal [hyphens:none]">{bullet}</span>
                           </div>
                         ))}
                       </div>
                     </div>
 
                     {/* Right 3D Glass Illustration Artwork */}
-                    <CardIllustration type={service.watermark} />
+                    <div className="shrink-0 pt-0.5">
+                      <CardIllustration type={service.watermark} />
+                    </div>
                   </div>
                 </div>
 
-                {/* Bottom Section: 3-Column Metrics Container + Action Row */}
-                <div className="mt-4 sm:mt-5 pt-0.5 space-y-3 sm:space-y-3.5">
+                {/* Bottom Section: 3-Column Metrics Container + Action Row - Always Level Across Row */}
+                <div className="mt-auto pt-4 space-y-3.5">
                   {/* 3-Column Metrics Box with Hairline Dividers */}
-                  <div className="rounded-xl bg-[#F8F9FD] border border-slate-100 py-2.5 sm:py-3 px-1.5 sm:px-2 grid grid-cols-3 divide-x divide-slate-200/80 items-center text-center">
-                    {service.metrics.map((metric, idx) => (
-                      <div key={idx} className="px-1 min-w-0 flex flex-col items-center justify-center text-center">
-                        <div className="text-[16px] sm:text-[17.5px] font-black tracking-tight text-slate-900 leading-tight">
-                          {metric.value}
+                  <div className="rounded-xl bg-[#F8F9FD] border border-slate-100 py-2.5 sm:py-3 px-1 sm:px-2 grid grid-cols-3 divide-x divide-slate-200/80 items-center text-center">
+                    {service.metrics.map((metric, idx) => {
+                      const hasArrow = metric.value.includes("→");
+                      return (
+                        <div key={idx} className="px-1 min-w-0 flex flex-col items-center justify-center text-center">
+                          <div className="h-[22px] flex items-center justify-center">
+                            {hasArrow ? (
+                              <span className="text-[12.5px] xs:text-[13.5px] sm:text-[14.5px] font-black tracking-tight text-slate-900 whitespace-nowrap tabular-nums inline-flex items-center justify-center gap-0.5">
+                                <span>{metric.value.split("→")[0].trim()}</span>
+                                <span className="text-[#635BFF] font-bold mx-0.5">→</span>
+                                <span>{metric.value.split("→")[1].trim()}</span>
+                              </span>
+                            ) : (
+                              <span className="text-[14px] sm:text-[16px] font-black tracking-tight text-slate-900 whitespace-nowrap tabular-nums">
+                                {metric.value}
+                              </span>
+                            )}
+                          </div>
+                          <div className="text-[10px] sm:text-[11px] font-medium text-slate-500 mt-0.5 leading-tight text-center line-clamp-1 h-[18px] flex items-center justify-center break-normal [hyphens:none]">
+                            {metric.label}
+                          </div>
                         </div>
-                        <div className="text-[11px] sm:text-[11.5px] font-medium text-slate-500 mt-0.5 leading-tight text-center break-words max-w-full">
-                          {metric.label}
-                        </div>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
 
-                  {/* Action Row: Black Pill Button on Left, Purple Status Tag on Right */}
-                  <div className="flex items-center justify-between pt-0.5">
+                  {/* Action Row: Black Pill Button on Left, Status Tag on Right */}
+                  <div className="flex items-center justify-between pt-0.5 h-[38px]">
                     <button
                       type="button"
                       onClick={(e) => {
                         e.stopPropagation();
                         setSelectedService(service);
                       }}
-                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-[13px] font-bold text-white bg-[#0F172A] hover:bg-[#1E293B] active:scale-95 transition-all shadow-xs"
+                      className="inline-flex items-center gap-2 px-4.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-[13px] font-bold text-white bg-[#0F172A] hover:bg-[#1E293B] active:scale-95 transition-all shadow-xs group/btn"
                     >
-                      <span>Learn More</span>
-                      <ArrowRightIcon className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                      <span className="whitespace-nowrap">Learn More</span>
+                      <svg className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                      </svg>
                     </button>
 
                     <CategoryBadge label={service.badge.label} />
@@ -1580,7 +1445,7 @@ export default function ServicesCatalog() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.22 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-sm"
+            className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/60 backdrop-blur-sm"
             onClick={() => setSelectedService(null)}
           >
             <motion.div 
@@ -1588,14 +1453,14 @@ export default function ServicesCatalog() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.94, y: 20 }}
               transition={{ duration: 0.28, ease: TRANSITION_EASE }}
-              className="relative w-full max-w-xl max-h-[90vh] overflow-y-auto bg-white rounded-[28px] sm:rounded-[32px] p-5 sm:p-8 shadow-2xl border border-white/80"
+              className="relative w-full max-w-xl max-h-[88vh] overflow-y-auto bg-white rounded-[24px] sm:rounded-[32px] p-4.5 sm:p-8 shadow-2xl border border-white/80"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
               <button
                 type="button"
                 onClick={() => setSelectedService(null)}
-                className="absolute top-5 right-5 sm:top-6 sm:right-6 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center text-sm font-bold transition-all"
+                className="absolute top-4 right-4 sm:top-6 sm:right-6 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center text-sm font-bold transition-all z-10"
               >
                 ✕
               </button>
@@ -1608,6 +1473,18 @@ export default function ServicesCatalog() {
                 <div>
                   <span className="text-[11px] sm:text-xs font-bold text-slate-400">SOLUTION {selectedService.number}</span>
                   <h3 className="text-xl sm:text-2xl font-black text-slate-950 tracking-tight">{selectedService.title}</h3>
+                  {selectedService.subTags && selectedService.subTags.length > 0 && (
+                    <div className="flex flex-wrap gap-1.5 mt-2">
+                      {selectedService.subTags.map((tag, idx) => (
+                        <span
+                          key={idx}
+                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-[#F4F1FD] text-[#635BFF] border border-[#E4DCFC]"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
 
@@ -1618,16 +1495,27 @@ export default function ServicesCatalog() {
 
               {/* Metrics */}
               <div className="mt-5 sm:mt-6 rounded-2xl bg-[#F8F9FD] border border-slate-200/80 p-3 sm:p-4 grid grid-cols-3 divide-x divide-slate-200 items-center text-center">
-                {selectedService.metrics.map((m, i) => (
-                  <div key={i} className="px-1.5 sm:px-2">
-                    <div className={`text-lg sm:text-xl font-black ${m.highlight ? 'text-[#635BFF]' : 'text-slate-950'}`}>
-                      {m.value}
+                {selectedService.metrics.map((m, i) => {
+                  const hasArrow = m.value.includes("→");
+                  return (
+                    <div key={i} className="px-1.5 sm:px-2">
+                      <div className={`text-base sm:text-lg font-black whitespace-nowrap tabular-nums ${m.highlight ? 'text-[#635BFF]' : 'text-slate-950'}`}>
+                        {hasArrow ? (
+                          <span className="inline-flex items-center justify-center gap-1">
+                            <span>{m.value.split("→")[0].trim()}</span>
+                            <span className="text-[#635BFF] font-bold">→</span>
+                            <span>{m.value.split("→")[1].trim()}</span>
+                          </span>
+                        ) : (
+                          m.value
+                        )}
+                      </div>
+                      <div className="text-[10.5px] sm:text-[11px] font-medium text-slate-500 mt-0.5 whitespace-nowrap">
+                        {m.label}
+                      </div>
                     </div>
-                    <div className="text-[10px] sm:text-[11px] font-medium text-slate-500 mt-0.5">
-                      {m.label}
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
 
               {/* Feature Bullets */}

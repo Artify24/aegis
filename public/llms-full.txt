@@ -1,0 +1,46 @@
+﻿# Aegis — Enterprise AI Company & Intelligent Automation Infrastructure
+URL: https://aegis-agency.com
+Contact: contact@aegis-agency.com
+Consultation: https://aegis-agency.com/contact
+
+## Overview
+Aegis is an enterprise AI company that designs, builds, and deploys production-grade autonomous intelligence systems, real-time voice agents, internal knowledge engines, and end-to-end cognitive workflow automations. Aegis partners with mid-market companies and enterprise organizations to transform manual operational bottlenecks into autonomous, high-throughput software architectures.
+
+## Service Offerings
+
+### 1. Conversational Voice AI & Telephony
+- Capabilities: Sub-second latency inbound triage, automated appointment scheduling, outbound lead qualification, multi-lingual support, real-time sentiment analysis, and CRM sync.
+- Integrations: Twilio, Vapi, Retell AI, LiveKit, Deepgram, ElevenLabs, OpenAI Realtime API.
+- Use Cases: Healthcare scheduling, real estate qualification, high-volume inbound customer support.
+
+### 2. Autonomous Multi-Agent Workflows
+- Capabilities: Orchestrated teams of autonomous agents with deterministic guardrails, human-in-the-loop approvals, parallel execution, and automated failure recovery.
+- Frameworks: LangGraph, CrewAI, AutoGen, LlamaIndex, Python, Next.js.
+- Use Cases: Financial document reconciliation, loan processing, automated marketing analytics, code generation pipelines.
+
+### 3. Enterprise Knowledge Bases & RAG
+- Capabilities: Context-aware retrieval-augmented generation connected to internal Notion, Google Drive, Jira, Zendesk, and SQL/NoSQL databases with role-based access control (RBAC).
+- Architecture: Hybrid search (dense + sparse BM25), semantic re-ranking (Cohere), chunk optimization, and private vector storage (Pinecone, Qdrant, Milvus).
+- Security: Zero data retention agreements, SOC2 Type II compliance standards, end-to-end encryption.
+
+### 4. Custom Model Fine-Tuning & Deployment
+- Capabilities: Domain-specific fine-tuning (LoRA, QLoRA) on custom datasets, distillation for cost reduction, vLLM inference hosting, and strict output schema enforcement via Instructor / Pydantic.
+- Models: Llama 3, Mistral, DeepSeek, Claude 3.5 Sonnet, GPT-4o.
+
+### 5. Enterprise Integrations & Workflow Orchestration
+- Capabilities: Bi-directional synchronization across legacy and modern enterprise tech stacks with automated audit trails and error logging.
+- Platforms: Salesforce, HubSpot, SAP, ServiceNow, Slack, Zapier, Make, n8n, custom REST/GraphQL APIs.
+
+## Frequently Asked Questions (FAQ)
+
+### What makes Aegis different from standard agencies?
+Aegis does not provide generic plug-and-play wrappers. We architect custom, deterministic AI software systems directly embedded into your production database and operational pipelines, designed for enterprise reliability, data privacy, and sub-second response times.
+
+### How does Aegis handle data privacy and security?
+Client data is never used to train public foundation models. We utilize private VPC deployments, enterprise zero-data-retention APIs, role-based access controls (RBAC), and SOC2-compliant encryption at rest and in transit.
+
+### What is the typical implementation timeline?
+Standard production deployments take between 2 to 4 weeks depending on the complexity of your existing integrations, data cleaning needs, and compliance verifications.
+
+## Contact & Getting Started
+To schedule a strategic technical discovery session and architecture review, visit https://aegis-agency.com/contact or email contact@aegis-agency.com.

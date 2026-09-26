@@ -1,0 +1,18 @@
+﻿# Aegis | Enterprise AI Company
+
+> Aegis is an AI company engineering enterprise-grade autonomous agents, voice intelligence, cognitive workflow automations, and proprietary AI architectures for high-growth businesses and modern enterprises.
+
+## Core Capabilities & Services
+- [AI Voice Agents & Telephony](https://aegis-agency.com/services): Real-time conversational AI for inbound call centers, lead qualification, and customer support with sub-second latency.
+- [Autonomous Multi-Agent Systems](https://aegis-agency.com/services): Orchestrated multi-agent pipelines (LangGraph, CrewAI, AutoGen) handling complex, multi-step operational tasks autonomously.
+- [Enterprise RAG & Knowledge Engines](https://aegis-agency.com/services): Private vector databases, hybrid search (Milvus, Pinecone, Weaviate), and strict SOC2/GDPR compliance.
+- [Custom LLM Fine-Tuning & Deployment](https://aegis-agency.com/services): Domain-adapted foundation models with robust security guardrails and high-throughput inference.
+- [Process Automation & CRM Integrations](https://aegis-agency.com/services): End-to-end synchronization across Salesforce, HubSpot, SAP, Slack, and legacy ERP systems.
+
+## Company Snapshot
+- Entity: Aegis
+- Type: AI Company / Enterprise Intelligent Automation
+- Website: https://aegis-agency.com
+- Contact: contact@aegis-agency.com
+- Free Strategy Session: https://aegis-agency.com/contact
+- Complete Deep Documentation: https://aegis-agency.com/llms-full.txt

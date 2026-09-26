@@ -77,7 +77,7 @@ export default function ContactPage() {
           <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden anim-fade-scale hidden lg:block">
             <Image
               src="/assets/hero-contact.png"
-              alt="Let's turn your ideas into impact. - Aegiss"
+              alt="Let's turn your ideas into impact. - Aegis"
               fill
               priority
               sizes="(min-width: 1024px) 100vw, 1px"
@@ -135,8 +135,8 @@ export default function ContactPage() {
           {/* Bottom Row: 3 Guarantees (Left) & Floating Social Proof Badge (Right) */}
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-4 sm:pt-10">
             {/* Mobile 3-Column Pill Card (Matches media_1789912195105.png) */}
-            <div className="md:hidden w-full bg-white/95 backdrop-blur-md border border-white/80 rounded-2xl p-3.5 shadow-[0_12px_36px_-8px_rgba(99,91,255,0.08)]">
-              <div className="grid grid-cols-3 divide-x divide-slate-200/80 items-center text-center">
+            <div className="md:hidden w-full bg-white/40 backdrop-blur-2xl backdrop-saturate-150 border border-white/75 rounded-2xl p-3.5 shadow-[0_16px_40px_-8px_rgba(99,91,255,0.12),inset_0_1.5px_2px_0_rgba(255,255,255,0.95)]">
+              <div className="grid grid-cols-3 divide-x divide-white/70 items-center text-center">
                 <div className="flex flex-col items-center px-1">
                   <div className="w-8 h-8 rounded-xl bg-[#ECE7FE] text-[#635BFF] flex items-center justify-center mb-1">
                     <BoltIcon className="w-4 h-4 text-[#635BFF]" />
@@ -270,7 +270,7 @@ export default function ContactPage() {
                       </div>
                       <h3 className="text-lg font-bold text-slate-900">Message Received!</h3>
                       <p className="text-xs sm:text-sm text-slate-600 max-w-sm mx-auto">
-                        Thank you for contacting Aegiss. Our team will review your requirements and respond within 24 hours.
+                        Thank you for contacting Aegis. Our team will review your requirements and respond within 24 hours.
                       </p>
                       <button
                         type="button"
@@ -442,7 +442,7 @@ export default function ContactPage() {
                     {/* Email Us */}
                     <HoverCard hoverY={-3}>
                       <a
-                        href="mailto:hello@aegiss.ai"
+                        href="mailto:hello@aegis.ai"
                         className="p-4 rounded-2xl bg-white border border-slate-200/80 flex items-center justify-between hover:border-indigo-200 hover:shadow-xs transition-all group"
                       >
                         <div className="flex items-center gap-3.5">
@@ -451,7 +451,7 @@ export default function ContactPage() {
                           </div>
                           <div>
                             <h4 className="text-xs font-bold text-slate-900">Email Us</h4>
-                            <p className="text-xs text-slate-500">hello@aegiss.ai</p>
+                            <p className="text-xs text-slate-500">hello@aegis.ai</p>
                           </div>
                         </div>
                         <ArrowRightIcon className="w-4 h-4 text-slate-400 group-hover:text-[#635BFF] group-hover:translate-x-0.5 transition-all" />
@@ -574,7 +574,7 @@ export default function ContactPage() {
                           <MapPinIcon className="w-4 h-4" />
                         </div>
                         <div>
-                          <h5 className="text-xs font-bold text-white">Aegiss</h5>
+                          <h5 className="text-xs font-bold text-white">Aegis</h5>
                           <p className="text-[11px] text-slate-400">Navi Mumbai, Maharashtra</p>
                         </div>
                       </div>

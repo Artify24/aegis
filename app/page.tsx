@@ -78,7 +78,7 @@ export default function HomePage() {
               {/* Badge */}
               <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white/90 backdrop-blur-xs border border-indigo-100/80 shadow-2xs text-[#635BFF]">
                 <span className="w-2 h-2 rounded-full bg-[#635BFF]" />
-                <span className="text-slate-800">AI &amp; Automation Agency</span>
+                <span className="text-slate-800">AI Company</span>
               </div>
 
               {/* Heading */}
@@ -95,23 +95,23 @@ export default function HomePage() {
               </p>
 
               {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 pt-1">
+              <div className="flex flex-row items-center gap-2.5 sm:gap-4 pt-1">
                 <HoverScale>
                   <Link
                     href="/contact"
-                    className="inline-flex items-center justify-center gap-2 px-7 py-3 sm:py-3.5 rounded-full text-sm font-bold text-white bg-[#635BFF] hover:bg-[#5247E6] transition-colors shadow-md hover:shadow-indigo-500/25 w-auto text-center"
+                    className="inline-flex items-center justify-center gap-2 px-5 py-2.5 sm:px-7 sm:py-3.5 rounded-full text-xs sm:text-sm font-bold text-white bg-[#635BFF] hover:bg-[#5247E6] transition-colors shadow-md hover:shadow-indigo-500/25 w-auto text-center"
                   >
                     <span>Book a Free Call</span>
-                    <ArrowRightIcon className="w-4 h-4" />
+                    <ArrowRightIcon className="w-3.5 sm:w-4 h-3.5 sm:h-4" />
                   </Link>
                 </HoverScale>
                 <HoverScale>
                   <Link
                     href="/services"
-                    className="inline-flex items-center justify-center gap-1.5 px-1 py-1.5 text-sm font-bold text-slate-900 border-b border-slate-900 sm:border-0 sm:px-7 sm:py-3.5 sm:rounded-full sm:bg-white/90 sm:backdrop-blur-xs sm:border sm:border-slate-300 hover:text-[#635BFF] sm:hover:bg-white transition-all w-auto text-center"
+                    className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 sm:px-7 sm:py-3.5 rounded-full text-xs sm:text-sm font-bold text-slate-800 bg-white/90 hover:bg-white border border-slate-200/90 hover:border-slate-300 shadow-2xs transition-all w-auto text-center"
                   >
                     <span>See Our Work</span>
-                    <ArrowRightIcon className="w-3.5 h-3.5" />
+                    <ArrowRightIcon className="w-3.5 sm:w-4 h-3.5 sm:h-4" />
                   </Link>
                 </HoverScale>
               </div>
@@ -131,45 +131,45 @@ export default function HomePage() {
               </div>
             </FadeIn>
 
-            {/* Bottom Feature Bar: Matches media_1789912195105.png on mobile, desktop reference on lg */}
-            <FadeIn direction="up" delay={0.25} className="w-full bg-white/95 backdrop-blur-md border border-white/80 rounded-[24px] sm:rounded-[28px] lg:rounded-full px-3 py-3 sm:px-6 sm:py-4 lg:px-10 lg:py-5 shadow-[0_12px_36px_-8px_rgba(99,91,255,0.08),0_2px_8px_rgba(0,0,0,0.02)] mt-2 lg:mt-0 relative z-10">
+            {/* Bottom Feature Bar: Glassmorphic transparent with blur bg */}
+            <FadeIn direction="up" delay={0.25} className="w-full bg-white/40 backdrop-blur-2xl backdrop-saturate-150 border border-white/75 rounded-[24px] sm:rounded-[28px] lg:rounded-full px-3 py-3 sm:px-6 sm:py-4 lg:px-10 lg:py-5 shadow-[0_16px_40px_-8px_rgba(99,91,255,0.12),inset_0_1.5px_2px_0_rgba(255,255,255,0.95)] mt-2 lg:mt-0 relative z-10">
               {/* Mobile 4-Column Compact Layout (Matches media_1789912195105.png) */}
               <div className="grid grid-cols-4 gap-1 sm:gap-2 items-center text-center lg:hidden">
                 {/* 1. Save Hours */}
                 <div className="flex flex-col items-center">
-                  <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-b from-[#F7F5FF] via-[#EFEAFF] to-[#E5DCFF] border border-[#E0D5FF] flex items-center justify-center shrink-0 shadow-2xs mb-1">
+                  <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-b from-white/90 via-[#F7F5FF]/75 to-[#E5DCFF]/60 border border-white/85 flex items-center justify-center shrink-0 shadow-2xs mb-1 backdrop-blur-xs">
                     <BoltIcon className="w-4 h-4 sm:w-5 sm:h-5 text-[#635BFF]" />
                   </div>
                   <span className="text-[10.5px] sm:text-xs font-bold text-[#0B0D17] leading-tight tracking-tight">Save Hours</span>
                 </div>
                 {/* 2. Reduce Costs */}
                 <div className="flex flex-col items-center">
-                  <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-b from-[#F7F5FF] via-[#EFEAFF] to-[#E5DCFF] border border-[#E0D5FF] flex items-center justify-center shrink-0 shadow-2xs mb-1">
+                  <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-b from-white/90 via-[#F7F5FF]/75 to-[#E5DCFF]/60 border border-white/85 flex items-center justify-center shrink-0 shadow-2xs mb-1 backdrop-blur-xs">
                     <LayersIcon className="w-4 h-4 sm:w-5 sm:h-5 text-[#635BFF]" />
                   </div>
                   <span className="text-[10.5px] sm:text-xs font-bold text-[#0B0D17] leading-tight tracking-tight">Reduce Costs</span>
                 </div>
                 {/* 3. Scale Faster */}
                 <div className="flex flex-col items-center">
-                  <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-b from-[#F7F5FF] via-[#EFEAFF] to-[#E5DCFF] border border-[#E0D5FF] flex items-center justify-center shrink-0 shadow-2xs mb-1">
+                  <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-b from-white/90 via-[#F7F5FF]/75 to-[#E5DCFF]/60 border border-white/85 flex items-center justify-center shrink-0 shadow-2xs mb-1 backdrop-blur-xs">
                     <ScaleIcon className="w-4 h-4 sm:w-5 sm:h-5 text-[#635BFF]" />
                   </div>
                   <span className="text-[10.5px] sm:text-xs font-bold text-[#0B0D17] leading-tight tracking-tight">Scale Faster</span>
                 </div>
                 {/* 4. Stay Secure */}
                 <div className="flex flex-col items-center">
-                  <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-b from-[#F7F5FF] via-[#EFEAFF] to-[#E5DCFF] border border-[#E0D5FF] flex items-center justify-center shrink-0 shadow-2xs mb-1">
+                  <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-b from-white/90 via-[#F7F5FF]/75 to-[#E5DCFF]/60 border border-white/85 flex items-center justify-center shrink-0 shadow-2xs mb-1 backdrop-blur-xs">
                     <ShieldIcon className="w-4 h-4 sm:w-5 sm:h-5 text-[#635BFF]" />
                   </div>
                   <span className="text-[10.5px] sm:text-xs font-bold text-[#0B0D17] leading-tight tracking-tight">Stay Secure</span>
                 </div>
               </div>
 
-              {/* Desktop 4-Column Detailed Layout (100% Unchanged) */}
+              {/* Desktop 4-Column Detailed Layout */}
               <div className="hidden lg:grid lg:grid-cols-4 lg:gap-0">
                 {/* 1. Save Hours */}
                 <HoverCard hoverY={-3} className="flex items-center gap-4 lg:pr-6 cursor-default">
-                  <div className="w-14 sm:w-15 sm:h-15 rounded-[22px] bg-gradient-to-b from-[#F7F5FF] via-[#EFEAFF] to-[#E5DCFF] border border-[#E0D5FF] flex items-center justify-center shrink-0 shadow-[0_10px_22px_-6px_rgba(99,91,255,0.22),inset_0_1px_2px_rgba(255,255,255,1)]">
+                  <div className="w-14 sm:w-15 sm:h-15 rounded-[22px] bg-gradient-to-b from-white/90 via-[#F7F5FF]/75 to-[#E5DCFF]/60 border border-white/85 flex items-center justify-center shrink-0 shadow-[0_10px_22px_-6px_rgba(99,91,255,0.22),inset_0_1.5px_2px_rgba(255,255,255,1)] backdrop-blur-xs">
                     <svg viewBox="0 0 24 24" className="w-6 h-6 fill-[#635BFF]" xmlns="http://www.w3.org/2000/svg">
                       <path d="M13 2L3.5 13.5h7L8.5 22l12-12.5h-7.5L13 2z" />
                     </svg>
@@ -181,8 +181,8 @@ export default function HomePage() {
                 </HoverCard>
 
                 {/* 2. Reduce Costs */}
-                <HoverCard hoverY={-3} className="flex items-center gap-4 lg:px-6 lg:border-l lg:border-slate-100 cursor-default">
-                  <div className="w-14 sm:w-15 sm:h-15 rounded-[22px] bg-gradient-to-b from-[#F7F5FF] via-[#EFEAFF] to-[#E5DCFF] border border-[#E0D5FF] flex items-center justify-center shrink-0 shadow-[0_10px_22px_-6px_rgba(99,91,255,0.22),inset_0_1px_2px_rgba(255,255,255,1)]">
+                <HoverCard hoverY={-3} className="flex items-center gap-4 lg:px-6 lg:border-l lg:border-white/70 cursor-default">
+                  <div className="w-14 sm:w-15 sm:h-15 rounded-[22px] bg-gradient-to-b from-white/90 via-[#F7F5FF]/75 to-[#E5DCFF]/60 border border-white/85 flex items-center justify-center shrink-0 shadow-[0_10px_22px_-6px_rgba(99,91,255,0.22),inset_0_1.5px_2px_rgba(255,255,255,1)] backdrop-blur-xs">
                     <svg viewBox="0 0 24 24" className="w-6 h-6 fill-none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M12 3L3.5 7.2L12 11.4L20.5 7.2L12 3Z" fill="#635BFF" />
                       <path d="M3.5 11.2L12 15.4L20.5 11.2" stroke="#635BFF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -196,8 +196,8 @@ export default function HomePage() {
                 </HoverCard>
 
                 {/* 3. Scale Faster */}
-                <HoverCard hoverY={-3} className="flex items-center gap-4 lg:px-6 lg:border-l lg:border-slate-100 cursor-default">
-                  <div className="w-14 sm:w-15 sm:h-15 rounded-[22px] bg-gradient-to-b from-[#F7F5FF] via-[#EFEAFF] to-[#E5DCFF] border border-[#E0D5FF] flex items-center justify-center shrink-0 shadow-[0_10px_22px_-6px_rgba(99,91,255,0.22),inset_0_1px_2px_rgba(255,255,255,1)]">
+                <HoverCard hoverY={-3} className="flex items-center gap-4 lg:px-6 lg:border-l lg:border-white/70 cursor-default">
+                  <div className="w-14 sm:w-15 sm:h-15 rounded-[22px] bg-gradient-to-b from-white/90 via-[#F7F5FF]/75 to-[#E5DCFF]/60 border border-white/85 flex items-center justify-center shrink-0 shadow-[0_10px_22px_-6px_rgba(99,91,255,0.22),inset_0_1.5px_2px_rgba(255,255,255,1)] backdrop-blur-xs">
                     <svg viewBox="0 0 24 24" className="w-6 h-6 fill-none" xmlns="http://www.w3.org/2000/svg">
                       <rect x="3.5" y="4.5" width="17" height="15" rx="3.5" fill="#635BFF" />
                       <path d="M8.5 14L15.5 7M15.5 7H11M15.5 7V11.5" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
@@ -210,8 +210,8 @@ export default function HomePage() {
                 </HoverCard>
 
                 {/* 4. Stay Secure */}
-                <HoverCard hoverY={-3} className="flex items-center gap-4 lg:pl-6 lg:border-l lg:border-slate-100 cursor-default">
-                  <div className="w-14 sm:w-15 sm:h-15 rounded-[22px] bg-gradient-to-b from-[#F7F5FF] via-[#EFEAFF] to-[#E5DCFF] border border-[#E0D5FF] flex items-center justify-center shrink-0 shadow-[0_10px_22px_-6px_rgba(99,91,255,0.22),inset_0_1px_2px_rgba(255,255,255,1)]">
+                <HoverCard hoverY={-3} className="flex items-center gap-4 lg:pl-6 lg:border-l lg:border-white/70 cursor-default">
+                  <div className="w-14 sm:w-15 sm:h-15 rounded-[22px] bg-gradient-to-b from-white/90 via-[#F7F5FF]/75 to-[#E5DCFF]/60 border border-white/85 flex items-center justify-center shrink-0 shadow-[0_10px_22px_-6px_rgba(99,91,255,0.22),inset_0_1.5px_2px_rgba(255,255,255,1)] backdrop-blur-xs">
                     <svg viewBox="0 0 24 24" className="w-6 h-6 fill-none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M12 2.5L4.5 5.8v6.2c0 5.4 3.2 10.3 7.5 11.5 4.3-1.2 7.5-6.1 7.5-11.5V5.8L12 2.5z" fill="#635BFF" />
                       <path d="M12 7.8l.75 2.45 2.45.75-2.45.75L12 14.2l-.75-2.45-2.45-.75 2.45-.75L12 7.8z" fill="white" />
@@ -552,7 +552,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ===================== CASE STUDY & WHY AEGISS (ONE FRAME) ===================== */}
+        {/* ===================== CASE STUDY & WHY Aegis (ONE FRAME) ===================== */}
         <section className="relative pt-10 sm:pt-14 lg:pt-16 pb-14 sm:pb-18 lg:pb-20 bg-gradient-to-b from-[#FAF8FF] via-[#F3EDFE] to-[#FAF8FF] border-y border-purple-100/70 overflow-hidden" id="case-studies">
           {/* Soft purplish ambient highlight glows */}
           <div className="absolute -top-32 -left-32 w-[550px] h-[550px] rounded-full bg-[#635BFF]/[0.06] blur-3xl pointer-events-none" />
@@ -622,7 +622,7 @@ export default function HomePage() {
               </FadeIn>
             </div>
 
-            {/* ROW 2: WHY AEGISS */}
+            {/* ROW 2: WHY Aegis */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch pt-2 sm:pt-3">
               {/* Left Header Column */}
               <FadeIn direction="right" className="lg:col-span-4 xl:col-span-4 flex flex-col justify-between space-y-4 sm:space-y-5">
@@ -630,12 +630,12 @@ export default function HomePage() {
                   <div className="flex items-center gap-2.5">
                     <span className="w-2.5 h-2.5 rounded-full bg-[#635BFF] shrink-0" />
                     <span className="text-xs sm:text-[13px] font-extrabold tracking-[0.18em] text-slate-500 uppercase">
-                      WHY AEGISS
+                      WHY Aegis
                     </span>
                   </div>
 
                   <h2 className="text-3xl sm:text-4xl lg:text-[38px] xl:text-[42px] font-black tracking-tight text-[#0B0D17] leading-[1.12]">
-                    More Than <br className="hidden sm:inline" />a Development Agency.
+                    More Than <br className="hidden sm:inline" />an AI Company.
                   </h2>
 
                   <p className="text-slate-500 text-xs sm:text-sm lg:text-[14px] xl:text-[14.5px] leading-relaxed max-w-[360px]">
@@ -757,7 +757,7 @@ export default function HomePage() {
                 </h2>
 
                 <p className="text-white/90 text-sm sm:text-[15px] xl:text-base leading-relaxed max-w-xl font-normal">
-                  Book a free consultation and let&apos;s explore how Aegiss can help you scale with AI and automation.
+                  Book a free consultation and let&apos;s explore how Aegis can help you scale with AI and automation.
                 </p>
 
                 <div className="pt-1.5 sm:pt-2">

@@ -41,7 +41,7 @@ export default function AboutPage() {
           <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden anim-fade-scale hidden lg:block">
             <Image
               src="/assets/hero-about.png"
-              alt="Ideas Today. A Smarter Tomorrow. - Aegiss"
+              alt="Ideas Today. A Smarter Tomorrow. - Aegis"
               fill
               priority
               sizes="(min-width: 1024px) 100vw, 1px"
@@ -59,7 +59,7 @@ export default function AboutPage() {
                 <div className="flex items-center gap-2.5">
                   <span className="w-2.5 h-2.5 rounded-full bg-[#635BFF] shrink-0 animate-pulse" />
                   <span className="text-xs sm:text-[13px] font-extrabold tracking-[0.18em] text-slate-600 uppercase">
-                    ABOUT AEGISS
+                    ABOUT AEGIS
                   </span>
                 </div>
               </FadeIn>
@@ -78,7 +78,7 @@ export default function AboutPage() {
               {/* Subheading */}
               <FadeIn direction="up" delay={0.18} distance={20}>
                 <p className="text-slate-600 text-sm sm:text-base lg:text-[16px] max-w-lg leading-relaxed font-normal">
-                  We are an AI &amp; automation agency helping businesses eliminate manual
+                  We are an AI company helping businesses eliminate manual
                   work, integrate intelligent systems, and scale with technology that actually
                   delivers results.
                 </p>
@@ -86,38 +86,41 @@ export default function AboutPage() {
 
               {/* Action Buttons */}
               <FadeIn direction="up" delay={0.25} distance={20}>
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 pt-1 sm:pt-2">
+                <div className="flex flex-row items-center gap-2.5 sm:gap-4 pt-1 sm:pt-2">
                   <HoverScale scale={1.04} tapScale={0.96}>
                     <Link
                       href="/contact"
-                      className="inline-flex items-center justify-center gap-2 px-7 py-3 sm:py-3.5 rounded-full text-sm font-bold text-white bg-[#635BFF] hover:bg-[#5247E6] shadow-[0_6px_20px_rgba(99,91,255,0.35)] transition-all w-auto text-center"
+                      className="inline-flex items-center justify-center gap-2 px-5 py-2.5 sm:px-7 sm:py-3.5 rounded-full text-xs sm:text-sm font-bold text-white bg-[#635BFF] hover:bg-[#5247E6] shadow-[0_4px_14px_rgba(99,91,255,0.35)] transition-all w-auto text-center"
                     >
                       <span>Book a Free Call</span>
-                      <ArrowRightIcon className="w-4 h-4" />
+                      <ArrowRightIcon className="w-3.5 sm:w-4 h-3.5 sm:h-4" />
                     </Link>
                   </HoverScale>
                   <HoverScale scale={1.04} tapScale={0.96}>
                     <Link
                       href="/services"
-                      className="inline-flex items-center justify-center gap-1.5 px-1 py-1.5 text-sm font-bold text-slate-900 border-b border-slate-900 sm:border-0 sm:px-7 sm:py-3.5 sm:rounded-full sm:bg-white sm:border sm:border-slate-300 hover:text-[#635BFF] sm:hover:bg-slate-50 transition-all w-auto text-center"
+                      className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 sm:px-7 sm:py-3.5 rounded-full text-xs sm:text-sm font-bold text-slate-800 bg-white/90 hover:bg-white border border-slate-200/90 hover:border-slate-300 shadow-2xs transition-all w-auto text-center"
                     >
                       <span>Our Services</span>
-                      <ArrowRightIcon className="w-4 h-4" />
+                      <ArrowRightIcon className="w-3.5 sm:w-4 h-3.5 sm:h-4" />
                     </Link>
                   </HoverScale>
                 </div>
               </FadeIn>
 
-              {/* Seamless 3D Visual on Mobile (Matches media_1789912195105.png) */}
-              <div className="lg:hidden relative w-full flex justify-center pt-2 sm:pt-4">
-                <div className="relative w-[280px] sm:w-[340px] aspect-[1019/818]">
+              {/* Seamless 3D Visual on Mobile */}
+              <div className="lg:hidden relative w-full flex justify-center py-2 sm:py-3">
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <div className="w-[190px] h-[190px] rounded-full bg-gradient-to-tr from-[#635BFF]/20 to-[#A78BFA]/15 blur-2xl" />
+                </div>
+                <div className="relative w-[220px] sm:w-[280px] aspect-[1019/818]">
                   <Image
                     src="/assets/hero-about-mobile.png"
                     alt="Aegis Architecture"
                     fill
                     priority
-                    sizes="(max-width: 640px) 280px, 340px"
-                    className="object-contain object-bottom select-none pointer-events-none drop-shadow-[0_16px_36px_rgba(99,91,255,0.18)]"
+                    sizes="(max-width: 640px) 220px, 280px"
+                    className="object-contain object-center select-none pointer-events-none drop-shadow-[0_12px_28px_rgba(99,91,255,0.2)]"
                   />
                 </div>
               </div>
@@ -126,33 +129,33 @@ export default function AboutPage() {
             {/* Bottom Stats Row: 3-column pill card on mobile with dividers, seamless row on desktop */}
             <FadeIn direction="up" delay={0.32} distance={20} className="w-full relative z-10 mt-2 lg:mt-0">
               <div className="pt-2 sm:pt-10">
-                <div className="grid grid-cols-3 divide-x divide-slate-200/80 bg-white/95 backdrop-blur-md border border-white/80 rounded-2xl sm:rounded-3xl p-3 sm:p-5 shadow-[0_12px_36px_-8px_rgba(99,91,255,0.08)] w-full lg:w-auto lg:bg-transparent lg:border-0 lg:p-0 lg:shadow-none lg:flex lg:items-center lg:gap-8">
+                <div className="grid grid-cols-3 divide-x divide-slate-200/80 bg-white/80 backdrop-blur-xl border border-white/95 rounded-2xl sm:rounded-3xl p-3 sm:p-5 shadow-[0_12px_32px_-6px_rgba(99,91,255,0.1),inset_0_1px_1.5px_rgba(255,255,255,1)] w-full lg:w-auto lg:bg-transparent lg:border-0 lg:p-0 lg:shadow-none lg:flex lg:items-center lg:gap-8">
                   {/* Metric 1 */}
-                  <div className="text-center sm:text-left px-2 sm:px-4 lg:px-0">
-                    <div className="text-xl sm:text-3xl lg:text-[32px] font-black text-slate-950 tracking-tight leading-none">
+                  <div className="text-center sm:text-left px-1.5 sm:px-4 lg:px-0">
+                    <div className="text-lg xs:text-xl sm:text-3xl lg:text-[32px] font-black text-slate-950 tracking-tight leading-none">
                       50+
                     </div>
-                    <div className="text-[10px] sm:text-[13px] text-slate-500 font-medium mt-1 leading-tight">
+                    <div className="text-[10px] sm:text-[13px] text-slate-500 font-semibold mt-1 leading-tight">
                       Projects Delivered
                     </div>
                   </div>
 
                   {/* Metric 2 */}
-                  <div className="text-center sm:text-left px-2 sm:px-4 lg:px-0">
-                    <div className="text-xl sm:text-3xl lg:text-[32px] font-black text-slate-950 tracking-tight leading-none">
+                  <div className="text-center sm:text-left px-1.5 sm:px-4 lg:px-0">
+                    <div className="text-lg xs:text-xl sm:text-3xl lg:text-[32px] font-black text-slate-950 tracking-tight leading-none">
                       30+
                     </div>
-                    <div className="text-[10px] sm:text-[13px] text-slate-500 font-medium mt-1 leading-tight">
+                    <div className="text-[10px] sm:text-[13px] text-slate-500 font-semibold mt-1 leading-tight">
                       Happy Clients
                     </div>
                   </div>
 
                   {/* Metric 3 */}
-                  <div className="text-center sm:text-left px-2 sm:px-4 lg:px-0">
-                    <div className="text-xl sm:text-3xl lg:text-[32px] font-black text-slate-950 tracking-tight leading-none">
+                  <div className="text-center sm:text-left px-1.5 sm:px-4 lg:px-0">
+                    <div className="text-lg xs:text-xl sm:text-3xl lg:text-[32px] font-black text-slate-950 tracking-tight leading-none">
                       4.9/5
                     </div>
-                    <div className="text-[10px] sm:text-[13px] text-slate-500 font-medium mt-1 leading-tight">
+                    <div className="text-[10px] sm:text-[13px] text-slate-500 font-semibold mt-1 leading-tight">
                       Satisfaction
                     </div>
                   </div>
@@ -386,7 +389,7 @@ export default function AboutPage() {
                 {/* Background Network Graphic */}
                 <Image
                   src="/assets/about-earth-network.png"
-                  alt="Smarter Systems. Brighter Tomorrow. - Aegiss Network"
+                  alt="Smarter Systems. Brighter Tomorrow. - Aegis Network"
                   fill
                   sizes="(max-width: 1280px) 100vw, 1280px"
                   className="object-cover object-right pointer-events-none"
@@ -397,7 +400,7 @@ export default function AboutPage() {
                   <div className="lg:col-span-5 space-y-4 sm:space-y-5">
                     <div className="inline-flex items-center gap-2 text-xs font-bold tracking-wider text-slate-300 uppercase">
                       <span className="w-2 h-2 rounded-full bg-[#8B5CF6]" />
-                      <span>WHY AEGISS</span>
+                      <span>WHY AEGIS</span>
                     </div>
 
                     <h2 className="text-2xl sm:text-3xl lg:text-[34px] xl:text-[38px] font-extrabold tracking-tight text-white leading-[1.12]">
@@ -548,7 +551,7 @@ export default function AboutPage() {
                   <div className="relative rounded-[24px] sm:rounded-[28px] overflow-hidden min-h-[260px] sm:min-h-[280px] h-full p-4 flex flex-col justify-end shadow-md border border-slate-200/70 group">
                     <Image
                       src="/assets/team-collaborate.jpg"
-                      alt="Team Collaborate - Aegiss"
+                      alt="Team Collaborate - Aegis"
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 20vw"
                       className="object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out"
@@ -592,7 +595,7 @@ export default function AboutPage() {
                   <div className="relative rounded-[24px] sm:rounded-[28px] overflow-hidden min-h-[260px] sm:min-h-[280px] h-full p-4 flex flex-col justify-end shadow-md border border-slate-200/70 group">
                     <Image
                       src="/assets/team-execute.jpg"
-                      alt="Team Execute - Aegiss"
+                      alt="Team Execute - Aegis"
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 20vw"
                       className="object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out"
@@ -626,7 +629,7 @@ export default function AboutPage() {
                     <div className="relative z-10 space-y-2 pt-4">
                       <div className="w-6 h-0.5 bg-[#635BFF] rounded-full" />
                       <div className="text-xs sm:text-[13px] font-bold text-slate-400">
-                        Team Aegiss
+                        Team Aegis
                       </div>
                     </div>
                   </div>
@@ -663,7 +666,7 @@ export default function AboutPage() {
                   </h2>
 
                   <p className="text-white/80 text-xs sm:text-sm leading-relaxed max-w-lg">
-                    Let&apos;s discuss how Aegiss can help you automate, scale and create real impact for your business.
+                    Let&apos;s discuss how Aegis can help you automate, scale and create real impact for your business.
                   </p>
 
                   <div className="pt-2">
