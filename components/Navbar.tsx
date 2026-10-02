@@ -30,8 +30,8 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-2 group shrink-0">
           <div className="relative h-8 sm:h-11 lg:h-14 w-28 sm:w-44 lg:w-56">
             <Image 
-              src="/assets/logo-png.png"
-              alt="Aegiss Logo"
+              src="/assets/logo-png.webp"
+              alt="Aegis Logo"
               fill
               priority
               sizes="(max-width: 640px) 120px, (max-width: 1024px) 180px, 240px"

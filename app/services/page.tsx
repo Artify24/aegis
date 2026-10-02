@@ -72,7 +72,7 @@ export default function ServicesPage() {
           {/* Background Graphic with smooth scale fade-in - Desktop only */}
           <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden anim-fade-scale hidden lg:block">
             <Image
-              src="/assets/hero-services.png"
+              src="/assets/hero-services.webp"
               alt="From Ideas to Intelligent Execution - Aegis Automation Partner"
               fill
               priority
@@ -146,7 +146,7 @@ export default function ServicesPage() {
                 </div>
                 <div className="relative w-[210px] sm:w-[260px] aspect-[770/720]">
                   <Image
-                    src="/assets/hero-services-mobile.png"
+                    src="/assets/hero-services-mobile.webp"
                     alt="Aegis Automation Services"
                     fill
                     priority
@@ -241,11 +241,10 @@ export default function ServicesPage() {
               <FadeIn direction="right" duration={0.75} distance={24} className="h-full">
                 <div className="relative rounded-[24px] sm:rounded-[28px] overflow-hidden min-h-[250px] sm:min-h-[265px] lg:min-h-[275px] h-full p-6 sm:p-7 lg:p-8 flex flex-col justify-between border border-white/10 bg-[#070311] shadow-[0_12px_36px_rgba(0,0,0,0.35)]">
                   <Image
-                    src="/assets/services-case-study.png"
+                    src="/assets/services-case-study.webp"
                     alt="See What's Possible - Aegis Dashboard & Real Business Impact"
                     fill
                     sizes="(max-width: 1024px) 100vw, 62vw"
-                    priority
                     className="object-cover object-[center_right] lg:object-right"
                   />
                   
@@ -286,7 +285,7 @@ export default function ServicesPage() {
               <FadeIn direction="left" duration={0.75} distance={24} className="h-full">
                 <div className="relative rounded-[24px] sm:rounded-[28px] overflow-hidden min-h-[250px] sm:min-h-[265px] lg:min-h-[275px] h-full p-6 sm:p-7 lg:p-8 flex flex-col justify-between border border-slate-200/80 bg-white shadow-[0_10px_30px_rgba(99,91,255,0.06),0_2px_6px_rgba(0,0,0,0.02)]">
                   <Image
-                    src="/assets/services-cta-pattern.png"
+                    src="/assets/services-cta-pattern.webp"
                     alt="Ideas Automate Scale"
                     fill
                     sizes="(max-width: 1024px) 100vw, 38vw"

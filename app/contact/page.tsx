@@ -76,7 +76,7 @@ export default function ContactPage() {
           {/* Background Graphic with smooth scale fade-in - Desktop only */}
           <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden anim-fade-scale hidden lg:block">
             <Image
-              src="/assets/hero-contact.png"
+              src="/assets/hero-contact.webp"
               alt="Let's turn your ideas into impact. - Aegis"
               fill
               priority
@@ -120,7 +120,7 @@ export default function ContactPage() {
               <div className="lg:hidden relative w-full flex justify-center pt-2 sm:pt-4">
                 <div className="relative w-[280px] sm:w-[340px] aspect-[1018/818]">
                   <Image
-                    src="/assets/hero-contact-mobile.png"
+                    src="/assets/hero-contact-mobile.webp"
                     alt="Contact Aegis"
                     fill
                     priority
@@ -594,7 +594,7 @@ export default function ContactPage() {
                 {/* Background script on the right */}
                 <div className="absolute right-0 top-0 bottom-0 w-1/2 pointer-events-none hidden md:block">
                   <Image
-                    src="/assets/contact-cta-pattern.png"
+                    src="/assets/contact-cta-pattern.webp"
                     alt="Same Team. Real Conversations."
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"

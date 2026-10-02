@@ -13,8 +13,8 @@ export default function Footer() {
             <Link href="/" className="inline-block">
               <div className="relative h-7 w-28 brightness-0 invert">
                 <Image
-                  src="/assets/logo-png.png"
-                  alt="Aegiss Logo"
+                  src="/assets/logo-png.webp"
+                  alt="Aegis Logo"
                   fill
                   sizes="140px"
                   className="object-contain object-left"

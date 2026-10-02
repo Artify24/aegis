@@ -61,7 +61,7 @@ export default function HomePage() {
           {/* Background Graphic with smooth scale fade-in - Desktop only */}
           <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden anim-fade-scale hidden lg:block">
             <Image
-              src="/assets/hero-home.png"
+              src="/assets/hero-home.webp"
               alt="Turn Your Business Into Possibility"
               fill
               priority
@@ -120,7 +120,7 @@ export default function HomePage() {
               <div className="lg:hidden relative w-full flex justify-center pt-2 sm:pt-4">
                 <div className="relative w-[280px] sm:w-[340px] aspect-[740/880]">
                   <Image
-                    src="/assets/hero-girl-mobile.png"
+                    src="/assets/hero-girl-mobile.webp"
                     alt="Aegis AI Mascot"
                     fill
                     priority
@@ -564,11 +564,10 @@ export default function HomePage() {
               {/* Left Column Card (Visual - exact image fitted with zero cropping) */}
               <FadeIn direction="right" className="lg:col-span-7 relative w-full aspect-[1918/820] rounded-2xl sm:rounded-3xl lg:rounded-[28px] overflow-hidden bg-[#0B0416] shadow-sm">
                 <Image
-                  src="/assets/case-study-laptop.png"
+                  src="/assets/case-study-laptop.webp"
                   alt="From manual work to 70% higher efficiency - Aegis Case Study"
                   fill
                   sizes="(max-width: 1024px) 100vw, 58vw"
-                  priority
                   className="object-contain object-center"
                 />
               </FadeIn>
@@ -737,10 +736,9 @@ export default function HomePage() {
             <FadeIn direction="up" className="relative rounded-3xl overflow-hidden p-6 sm:p-9 lg:p-11 min-h-[210px] sm:min-h-[230px] flex items-center shadow-lg">
               {/* Background Image */}
               <Image
-                src="/assets/cta-banner-bg.png"
+                src="/assets/cta-banner-bg.webp"
                 alt="Ready to Automate Your Tomorrow?"
                 fill
-                priority
                 sizes="(max-width: 1280px) 100vw, 1280px"
                 className="object-cover object-center"
               />

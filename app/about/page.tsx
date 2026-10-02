@@ -40,7 +40,7 @@ export default function AboutPage() {
           {/* Background Graphic with smooth scale fade-in - Desktop only */}
           <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden anim-fade-scale hidden lg:block">
             <Image
-              src="/assets/hero-about.png"
+              src="/assets/hero-about.webp"
               alt="Ideas Today. A Smarter Tomorrow. - Aegis"
               fill
               priority
@@ -115,7 +115,7 @@ export default function AboutPage() {
                 </div>
                 <div className="relative w-[220px] sm:w-[280px] aspect-[1019/818]">
                   <Image
-                    src="/assets/hero-about-mobile.png"
+                    src="/assets/hero-about-mobile.webp"
                     alt="Aegis Architecture"
                     fill
                     priority
@@ -228,7 +228,7 @@ export default function AboutPage() {
                     <div className="absolute right-0 bottom-0 w-44 h-44 sm:w-52 sm:h-52 pointer-events-none select-none z-0">
                       <Float duration={5.5} distance={6} className="w-full h-full relative">
                         <Image
-                          src="/assets/mission-mountain.png"
+                          src="/assets/mission-mountain.webp"
                           alt="Our Mission Peak"
                           fill
                           sizes="208px"
@@ -273,7 +273,7 @@ export default function AboutPage() {
                     <div className="absolute -right-2 -bottom-2 w-48 h-48 sm:w-56 sm:h-56 pointer-events-none select-none z-0">
                       <Float duration={6} distance={7} className="w-full h-full relative">
                         <Image
-                          src="/assets/vision-planet.png"
+                          src="/assets/vision-planet.webp"
                           alt="Our Vision Planet"
                           fill
                           sizes="224px"
@@ -318,7 +318,7 @@ export default function AboutPage() {
                     <div className="absolute right-3 sm:right-5 top-12 sm:top-14 w-32 h-32 sm:w-36 sm:h-36 pointer-events-none select-none z-0 opacity-75">
                       <Float duration={4.8} distance={5} className="w-full h-full relative">
                         <Image
-                          src="/assets/values-script.png"
+                          src="/assets/values-script.webp"
                           alt="People Process Progress"
                           fill
                           sizes="144px"
@@ -388,7 +388,7 @@ export default function AboutPage() {
               <div className="relative rounded-[28px] sm:rounded-[32px] overflow-hidden p-6 sm:p-8 lg:p-10 border border-white/10 bg-[#06040E] text-white shadow-[0_16px_45px_rgba(0,0,0,0.5)]">
                 {/* Background Network Graphic */}
                 <Image
-                  src="/assets/about-earth-network.png"
+                  src="/assets/about-earth-network.webp"
                   alt="Smarter Systems. Brighter Tomorrow. - Aegis Network"
                   fill
                   sizes="(max-width: 1280px) 100vw, 1280px"
@@ -550,7 +550,7 @@ export default function AboutPage() {
                 <HoverCard hoverY={-6} className="h-full">
                   <div className="relative rounded-[24px] sm:rounded-[28px] overflow-hidden min-h-[260px] sm:min-h-[280px] h-full p-4 flex flex-col justify-end shadow-md border border-slate-200/70 group">
                     <Image
-                      src="/assets/team-collaborate.jpg"
+                      src="/assets/team-collaborate.webp"
                       alt="Team Collaborate - Aegis"
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 20vw"
@@ -572,7 +572,7 @@ export default function AboutPage() {
                 <HoverCard hoverY={-6} className="h-full">
                   <div className="relative rounded-[24px] sm:rounded-[28px] overflow-hidden min-h-[260px] sm:min-h-[280px] h-full p-4 flex flex-col justify-end shadow-md border border-slate-200/70 group">
                     <Image
-                      src="/assets/team-innovate.jpg"
+                      src="/assets/team-innovate.webp"
                       alt="Ideas Automate Scale - Innovate"
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 20vw"
@@ -594,7 +594,7 @@ export default function AboutPage() {
                 <HoverCard hoverY={-6} className="h-full">
                   <div className="relative rounded-[24px] sm:rounded-[28px] overflow-hidden min-h-[260px] sm:min-h-[280px] h-full p-4 flex flex-col justify-end shadow-md border border-slate-200/70 group">
                     <Image
-                      src="/assets/team-execute.jpg"
+                      src="/assets/team-execute.webp"
                       alt="Team Execute - Aegis"
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 20vw"
@@ -647,7 +647,7 @@ export default function AboutPage() {
               <div className="relative rounded-3xl overflow-hidden p-8 sm:p-12 lg:p-16 min-h-[260px] flex items-center">
                 {/* Background Image */}
                 <Image
-                  src="/assets/cta-banner-bg.png"
+                  src="/assets/cta-banner-bg.webp"
                   alt="Ready to Build What's Next?"
                   fill
                   sizes="(max-width: 1280px) 100vw, 1280px"
